@@ -15,6 +15,7 @@ function Login() {
             const res = await axios.post("http://localhost:3000/login", { email, senha })
             if (res.data.token) {
                 localStorage.setItem("token", res.data.token)
+                alert("Login realizado com sucesso!")
                 navigate('/home')
             }
 
