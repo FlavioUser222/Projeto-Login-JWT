@@ -19,7 +19,6 @@ function App() {
               <Home />
             </PrivateRoute>
           }
-
         />
       </Routes>
     </BrowserRouter>

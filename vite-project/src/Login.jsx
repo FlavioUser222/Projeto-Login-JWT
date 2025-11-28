@@ -28,7 +28,7 @@ function Login() {
         <>
             <div>
                 <h1>Login</h1>
-                <input type="email"  placeholder='Email'value={email} onChange={e => { setEmail(e.target.value) }} />
+                <input type="email"  placeholder='Email'value={email} required onChange={e => { setEmail(e.target.value) }} />
                 <input type="password" value={senha} placeholder='Senha' onChange={e => { setSenha(e.target.value) }} />
                 <button onClick={saveData}>Enviar</button>
             </div>
