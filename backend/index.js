@@ -3,6 +3,7 @@ const cors = require('cors')
 const { registerRoute } = require('./routes/registerRoute')
 const { LoginRoute } = require('./routes/loginRoute')
 const { perfilRoute } = require('./routes/perfilRoute')
+const { servicosRoute } = require('./routes/servicosRoute')
 
 const app = express()
 
@@ -17,6 +18,8 @@ app.use(express.json())
 registerRoute(app)
 LoginRoute(app)
 perfilRoute(app)
+
+servicosRoute(app)
 
 
 app.listen(3000, () => {
