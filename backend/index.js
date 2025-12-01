@@ -4,6 +4,7 @@ const { registerRoute } = require('./routes/registerRoute')
 const { LoginRoute } = require('./routes/loginRoute')
 const { perfilRoute } = require('./routes/perfilRoute')
 const { servicosRoute } = require('./routes/servicosRoute')
+const { agendamentosRoute } = require('./routes/agendamentosRoute')
 
 const app = express()
 
@@ -18,8 +19,8 @@ app.use(express.json())
 registerRoute(app)
 LoginRoute(app)
 perfilRoute(app)
-
 servicosRoute(app)
+agendamentosRoute(app)
 
 
 app.listen(3000, () => {

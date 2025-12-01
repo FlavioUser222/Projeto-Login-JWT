@@ -21,7 +21,7 @@ function Cadastro() {
 
     return (
         <>
-            <div>
+            <div className='Inputs-div'>
                 <h1>Cadastrar-se</h1>
                 <input type="email" placeholder='Email' value={email} onChange={e => { setEmail(e.target.value) }} />
                 <input type="password" placeholder='Senha' value={senha} onChange={e => { setSenha(e.target.value) }} />
