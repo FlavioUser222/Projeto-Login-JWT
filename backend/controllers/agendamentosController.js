@@ -9,11 +9,9 @@ async function postAgendamentoController(req, res) {
 }
 
 async function getAgendamento(req, res) {
-
-    const listaAgendamentos = res.send(agendamento.listarAgendamentos())
+    const listaAgendamentos = agendamento.listarAgendamentos()
 
     return res.json(listaAgendamentos)
-    
 }
 
 module.exports = {

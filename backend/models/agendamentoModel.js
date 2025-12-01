@@ -1,13 +1,6 @@
 class Agendamento {
 
     constructor() {
-        this.cliente_id = null
-        this.barbeiro_id = null
-        this.servico_id = null
-        this.data = ""
-        this.hora = ""
-        this.valor = 0
-        this.status = "pendente"
         this.agendamentos = []
     }
 
