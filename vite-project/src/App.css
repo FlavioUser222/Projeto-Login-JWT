@@ -128,12 +128,9 @@ p {
 }
 
 .card-text,
-.mainContent h1{
+.mainContent h1 {
   color: white;
 }
-
-
-
 
 input {
   padding: 8px 12px;
@@ -152,5 +149,53 @@ button {
   display: flex;
   flex-direction: column;
   min-height: 610px;
-  background-color: #303030;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+  max-width: 320px;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.img-card {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.img-card h1 {
+  margin-bottom: 40px;
+  color: rgb(224, 211, 26);
+}
+
+.container-endereco {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.redes-card {
+  display: flex;
+  width: 100%;
+
+}
+
+.img-card {
+  background-image: url('./assets/allef-vinicius-IvQeAVeJULw-unsplash.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+
+.redes-ul {
+  display: flex;
 }
