@@ -24,7 +24,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #797979;
+  background-color: rgba(0, 0, 0, 0.425);
+  ;
   gap: 10px;
 }
 
@@ -46,11 +47,6 @@ body {
   margin-top: 20px;
   border-radius: 10px;
 }
-
-
-
-
-
 
 
 .headerUl {
@@ -79,7 +75,7 @@ header a {
 }
 
 .mainContent {
-  background-image: url('./assets/allef-vinicius-IvQeAVeJULw-unsplash.jpg');
+  background-image: url('../public/assets/allef-vinicius-IvQeAVeJULw-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -118,7 +114,7 @@ p {
   align-items: center;
   justify-content: center;
   width: 60%;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
@@ -154,19 +150,37 @@ button {
   justify-content: center;
 }
 
+.container-equipe>.container-cards {
+  gap: 44px;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  width: 55%;
+}
+
+
+.img-endereco {
+  width: 100%;
+  height: 485px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .cards {
   max-width: 320px;
   width: 100%;
   min-height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 30px;
+
 }
 
 .img-card {
   display: flex;
   align-items: end;
   justify-content: center;
+  border-radius: 10px;
 }
 
 .img-card h1 {
@@ -180,6 +194,7 @@ button {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  justify-content: center;
 }
 
 .redes-card {
@@ -198,4 +213,5 @@ button {
 
 .redes-ul {
   display: flex;
+  list-style: none;
 }

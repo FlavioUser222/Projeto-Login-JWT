@@ -61,10 +61,49 @@ function Home() {
                             </div>
                             <div className="redes-card">
                                 <ul className='redes-ul'>
-                                    <li><a href=""><img src="" alt="" /></a></li>
-                                    <li><a href=""><img src="" alt="" /></a></li>
-                                    <li><a href=""><img src="" alt="" /></a></li>
-                                    <li><a href=""><img src="" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="cards">
+                            <div className="img-card">
+                                <h1>Nome</h1>
+                            </div>
+                            <div className="redes-card">
+                                <ul className='redes-ul'>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="cards">
+                            <div className="img-card">
+                                <h1>Nome</h1>
+                            </div>
+                            <div className="redes-card">
+                                <ul className='redes-ul'>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="cards">
+                            <div className="img-card">
+                                <h1>Nome</h1>
+                            </div>
+                            <div className="redes-card">
+                                <ul className='redes-ul'>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,7 +113,10 @@ function Home() {
 
                 <h1>Unidades</h1>
                 <div className="container-endereco">
-
+                    <div className="img-endereco">
+                        <img src="../public/assets/778 branco.png" alt="" />
+                        <img src="../public/assets/778 branco.png" alt="" />
+                    </div>
 
 
                 </div>
