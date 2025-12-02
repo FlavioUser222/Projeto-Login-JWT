@@ -189,7 +189,7 @@ button {
 }
 
 .img-card {
-  background-image: url('./assets/allef-vinicius-IvQeAVeJULw-unsplash.jpg');
+  background-image: url('../public/assets/allef-vinicius-IvQeAVeJULw-unsplash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { logo } from 'vite-project/src/assets/logo-blue 1.png'
 
 
 
@@ -19,7 +18,7 @@ function Home() {
         <>
             <header>
                 <ul className='headerUl'>
-                    <li><img src={logo} alt="" /></li>
+                    <li><img src="../public/assets/778 branco.png" alt="" /></li>
                     <li><a href="">Sobre</a></li>
                     <li><a href="">Serviços</a></li>
                     <li><a href="">Nossa Equipe</a></li>
@@ -52,7 +51,6 @@ function Home() {
                         </>))
                     }
                 </div>
-
 
                 <h1>Nossa Equipe</h1>
                 <div className="container-equipe">
