@@ -17,7 +17,7 @@ function Home() {
         <>
             <header>
                 <ul className='headerUl'>
-                    <li><h1>Barber</h1></li>
+                    <li><img src="" alt="" /></li>
                     <li><a href="">Sobre</a></li>
                     <li><a href="">Serviços</a></li>
                     <li><a href="">Nossa Equipe</a></li>
@@ -54,20 +54,20 @@ function Home() {
 
                 <div className="container-equipe">
                     <h1>Nossa Equipe</h1>
+                    <div className='container-card'>
+                        <div className="cards">
+                            <div className="img-card">
+                                <h1>Nome</h1>
+                            </div>
 
-
-                    <div className='cardEquipe'>
-                        <div className="img-card">
-                            <h1>Nome</h1>
-                        </div>
-
-                        <div className="redes-card">
-                            <ul>
-                                <li><a href=""><img src="" alt="" /></a></li>
-                                <li><a href=""><img src="" alt="" /></a></li>
-                                <li><a href=""><img src="" alt="" /></a></li>
-                                <li><a href=""><img src="" alt="" /></a></li>
-                            </ul>
+                            <div className="redes-card">
+                                <ul>
+                                    <li><a href=""><img src="" alt="" /></a></li>
+                                    <li><a href=""><img src="" alt="" /></a></li>
+                                    <li><a href=""><img src="" alt="" /></a></li>
+                                    <li><a href=""><img src="" alt="" /></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
