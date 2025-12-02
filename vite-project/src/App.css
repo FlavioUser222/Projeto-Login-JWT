@@ -122,9 +122,18 @@ p {
   flex-wrap: wrap;
 }
 
-h1 {
+.mainContainer>h1 {
+  color: white;
+  margin-top: 110px;
+}
+
+.card-text,
+.mainContent h1{
   color: white;
 }
+
+
+
 
 input {
   padding: 8px 12px;
@@ -142,4 +151,6 @@ button {
 .container-equipe {
   display: flex;
   flex-direction: column;
+  min-height: 610px;
+  background-color: #303030;
 }

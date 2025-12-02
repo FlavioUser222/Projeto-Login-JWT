@@ -52,8 +52,8 @@ function Home() {
                 </div>
 
 
+                <h1>Nossa Equipe</h1>
                 <div className="container-equipe">
-                    <h1>Nossa Equipe</h1>
                     <div className='container-card'>
                         <div className="cards">
                             <div className="img-card">
