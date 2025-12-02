@@ -155,6 +155,9 @@ button {
   flex-wrap: nowrap;
   overflow-x: scroll;
   width: 55%;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 
@@ -173,8 +176,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: 30px;
-
+  scroll-snap-align: start;
 }
+
 
 .img-card {
   display: flex;
