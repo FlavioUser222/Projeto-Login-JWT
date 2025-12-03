@@ -19,7 +19,6 @@ function Home() {
             <header>
                 <ul className='headerUl'>
                     <li><img src="../public/assets/778 branco.png" alt="" /></li>
-                    <li><a href="">Sobre</a></li>
                     <li><a href="">Serviços</a></li>
                     <li><a href="">Nossa Equipe</a></li>
                     <li><a href="">Contatos</a></li>
