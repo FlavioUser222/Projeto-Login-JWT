@@ -29,8 +29,8 @@ function Home() {
                         backgroundColor: "rgba(0, 0, 0, 0.6)",
                     },
                     content: {
-                        width: "400px",
-                        height: "250px",
+                        width: "620px",
+                        height: "620px",
                         margin: "auto",
                         padding: "20px",
                         borderRadius: "12px",
@@ -46,7 +46,12 @@ function Home() {
                 }}
             >
 
-                <h2>Modal Content</h2>
+                <h2 style={{ color: '#fff' }}>Modal Content</h2>
+                <label htmlFor="">Nome Completo</label>
+                <input type="text" />
+                <input type="text" />
+                <input type="text" />
+                <button>Agendar Horário</button>
                 <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
             </Modal >
 
