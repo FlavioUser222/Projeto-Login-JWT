@@ -54,56 +54,58 @@ function Home() {
                 <h1>Nossa Equipe</h1>
                 <div className="container-equipe">
                     <div className='container-cards'>
-                        <div className="cards">
-                            <div className="img-card">
-                                <h1>Nome</h1>
+                        <div className="cards-track">
+                            <div className="cards">
+                                <div className="img-card">
+                                    <h1>Nome</h1>
+                                </div>
+                                <div className="redes-card">
+                                    <ul className='redes-ul'>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div className="redes-card">
-                                <ul className='redes-ul'>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                </ul>
+                            <div className="cards">
+                                <div className="img-card">
+                                    <h1>Nome</h1>
+                                </div>
+                                <div className="redes-card">
+                                    <ul className='redes-ul'>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div className="cards">
-                            <div className="img-card">
-                                <h1>Nome</h1>
+                            <div className="cards">
+                                <div className="img-card">
+                                    <h1>Nome</h1>
+                                </div>
+                                <div className="redes-card">
+                                    <ul className='redes-ul'>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div className="redes-card">
-                                <ul className='redes-ul'>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="cards">
-                            <div className="img-card">
-                                <h1>Nome</h1>
-                            </div>
-                            <div className="redes-card">
-                                <ul className='redes-ul'>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="cards">
-                            <div className="img-card">
-                                <h1>Nome</h1>
-                            </div>
-                            <div className="redes-card">
-                                <ul className='redes-ul'>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                    <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                </ul>
+                            <div className="cards">
+                                <div className="img-card">
+                                    <h1>Nome</h1>
+                                </div>
+                                <div className="redes-card">
+                                    <ul className='redes-ul'>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
