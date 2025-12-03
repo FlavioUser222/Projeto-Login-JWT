@@ -13,6 +13,13 @@ body {
   width: 100%;
 }
 
+label {
+  color: white;
+}
+
+
+
+
 
 .Inputs-div {
   width: 100%;
@@ -85,7 +92,6 @@ header a {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
 }
 
 p {

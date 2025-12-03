@@ -30,7 +30,7 @@ function Home() {
                     },
                     content: {
                         width: "620px",
-                        height: "620px",
+                        height: "600px",
                         margin: "auto",
                         padding: "20px",
                         borderRadius: "12px",
@@ -41,18 +41,30 @@ function Home() {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
+                        gap:'20px',
                         overflow: "hidden"
                     }
                 }}
             >
 
-                <h2 style={{ color: '#fff' }}>Modal Content</h2>
+                <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
+
                 <label htmlFor="">Nome Completo</label>
-                <input type="text" />
-                <input type="text" />
-                <input type="text" />
+                <input type="text"  placeholder='Nome' />
+                <label htmlFor="">Profissional</label>
+                <select name="" id="">
+                    <option value="" selected disabled>Escolher profissional</option>
+                </select>
+                <label htmlFor="">Serviço</label>
+                <select name="" id="">
+                    <option value="" selected disabled>Escolher serviço</option>
+                </select>
+                <label htmlFor="">Horario</label>
+                <ul>
+                    <li><button>15:00</button></li>
+                </ul>
+
                 <button>Agendar Horário</button>
-                <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
             </Modal >
 
             <header>
