@@ -61,10 +61,10 @@ function Home() {
                                 </div>
                                 <div className="redes-card">
                                     <ul className='redes-ul'>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -74,10 +74,10 @@ function Home() {
                                 </div>
                                 <div className="redes-card">
                                     <ul className='redes-ul'>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
-                                        <li><a href=""><img src="../public/assets/778 branco.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
+                                        <li><a href=""><img src="../public/assets/Vector.png" alt="" /></a></li>
                                     </ul>
                                 </div>
                             </div>

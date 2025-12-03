@@ -111,7 +111,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60%;
+  width: 70%;
   gap: 15px;
   flex-wrap: wrap;
 }
@@ -175,7 +175,7 @@ button {
   }
 
   100% {
-    transform: translateX(calc(-100% + 55%));
+    transform: translateX(-100%);
   }
 }
 
