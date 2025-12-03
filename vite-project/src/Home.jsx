@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+import Modal from 'react-modal';
 
 
 function Home() {
 
+
+
     let [dados, setDados] = useState([])
+    const [modalIsOpen, setModalIsOpen] = useState(false)
+
 
     useEffect(() => {
         async function fetchServicos() {
@@ -16,6 +20,36 @@ function Home() {
     }, [])
     return (
         <>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                contentLabel="Example Modal"
+                style={{
+                    overlay: {
+                        backgroundColor: "rgba(0, 0, 0, 0.6)",
+                    },
+                    content: {
+                        width: "400px",
+                        height: "250px",
+                        margin: "auto",
+                        padding: "20px",
+                        borderRadius: "12px",
+                        border: "none",
+                        background: "#575656ff",
+                        boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        overflow: "hidden"
+                    }
+                }}
+            >
+
+                <h2>Modal Content</h2>
+                <button onClick={() => setModalIsOpen(false)}>Close Modal</button>
+            </Modal >
+
             <header>
                 <ul className='headerUl'>
                     <li><img src="../public/assets/778 branco.png" alt="" /></li>
@@ -24,7 +58,7 @@ function Home() {
                     <li><a href="">Contatos</a></li>
                 </ul>
 
-                <button>Agendar Horários</button>
+                <button onClick={() => { setModalIsOpen(true) }}>Agendar Horários</button>
             </header>
 
             <div className='mainContainer'>
@@ -32,7 +66,7 @@ function Home() {
                 <div className="mainContent">
                     <h1>Barber Shop</h1>
                     <p>Horário de funcionamento das 08:00 às 19:00</p>
-                    <button>Agendar Horario</button>
+                    <button onClick={() => { setModalIsOpen(true) }}>Agendar Horario</button>
                 </div>
 
 
