@@ -23,6 +23,13 @@ export default function Dashboard() {
 
 
     return (<>
+        <header>
+            <h1>Dashboard</h1>
+
+        </header>
+
+
+
         <input type="text" />
         <input type="number" />
         <input type="number" />
