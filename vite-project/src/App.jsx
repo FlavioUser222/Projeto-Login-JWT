@@ -3,6 +3,7 @@ import Login from "./Login"
 import Cadastro from './Cadastro'
 import Home from "./Home"
 import PrivateRoute from "./PrivateRoute"
+import Dashboard from "./dashboard"
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
 
         <Route
           path="/home"

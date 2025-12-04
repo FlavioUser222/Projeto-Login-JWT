@@ -18,7 +18,7 @@ function Cadastro() {
             navigate('/login')
         }
     }
-
+    
     return (
         <>
             <div className='Inputs-div'>
