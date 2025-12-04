@@ -7,6 +7,8 @@ export default function Dashboard() {
     const [preco, setPreco] = useState(0)
     const [duracao, setDuracao] = useState(0)
 
+
+
     async function postServicos() {
         try {
             let res = await axios.post('http://localhost:3000/servico', { nome, preco, duracao })
@@ -16,13 +18,15 @@ export default function Dashboard() {
         }
     }
 
+
+
+
+
     return (<>
         <input type="text" />
         <input type="number" />
         <input type="number" />
         <button onClick={() => { postServicos }}>Cadastrar Serviço</button>
-
     </>)
-
 
 }
