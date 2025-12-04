@@ -13,7 +13,7 @@ function Cadastro() {
 
     async function saveData() {
         const res = await axios.post("http://localhost:3000/register", { email, senha })
-        if(res.status === 200){
+        if (res.status === 200) {
             alert("Cadastro realizado com sucesso")
             navigate('/login')
         }
