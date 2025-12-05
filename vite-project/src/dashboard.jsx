@@ -16,19 +16,14 @@ export default function Dashboard() {
         }
     }
 
-
     return (<>
         <header>
             <h1>Dashboard</h1>
-
         </header>
-
-
-
-        <input type="text" />
-        <input type="number" />
-        <input type="number" />
-        <button onClick={() => { postServicos }}>Cadastrar Serviço</button>
+        
+        <input type="text" value={nome} onChange={text => { setNome(text.target.value) }} />
+        <input type="number" value={preco} onChange={text => { setPreco(text.target.value) }} />
+        <input type="number" value={duracao} onChange={text => { setDuracao(text.target.value) }} />
+        <button onClick={() => { postServicos() }}>Cadastrar Serviço</button>
     </>)
-
 }
