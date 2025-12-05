@@ -18,6 +18,20 @@ label {
 }
 
 
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content input,
+select {
+  width: 80%;
+  padding: 5px 25px;
+}
+
 
 
 
@@ -80,7 +94,7 @@ header a {
 }
 
 .mainContent {
-  background-image: url('../public/assets/allef-vinicius-IvQeAVeJULw-unsplash.jpg');
+  background-image: url('../public/assets/Gemini_Generated_Image_wjmziwwjmziwwjmz.png');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
