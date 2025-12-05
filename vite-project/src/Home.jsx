@@ -73,9 +73,25 @@ function Home() {
                     }
                 }}
             >
+                <div className="modal-content">
+                    <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
 
-                <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
+                    <label htmlFor="">Nome Completo</label>
+                    <input type="text" placeholder='Nome' />
+                    <label htmlFor="">Profissional</label>
+                    <select name="" id="">
+                        <option value="" selected disabled>Escolher profissional</option>
+                    </select>
+                    <label htmlFor="">Serviço</label>
+                    <select name="" id="">
+                        <option value="" selected disabled>Escolher serviço</option>
+                    </select>
+                    <label htmlFor="">Horario</label>
+                    <ul>
+                        <li><button>15:00</button></li>
+                    </ul>
 
+<<<<<<< Updated upstream
                 <label htmlFor="">Nome Completo</label>
                 <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
                 <label htmlFor="">Profissional</label>
@@ -110,6 +126,10 @@ function Home() {
                 </ul>
 
                 <button>Agendar Horário</button>
+=======
+                    <button>Agendar Horário</button>
+                </div>
+>>>>>>> Stashed changes
             </Modal >
 
             <header>
