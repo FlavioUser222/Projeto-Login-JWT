@@ -7,15 +7,35 @@ function Home() {
 
 
 
-    let [dados, setDados] = useState([])
+    let [servicos, setServicos] = useState([])
     const [modalIsOpen, setModalIsOpen] = useState(false)
+    let [nome, setNome] = useState('')
+    let [selectedId, setSelectedId] = useState('')
+    let [profissional, setProficional] = useState([])
+    let [horarios, setHorarios] = useState(['8:00', '9:00', '10:00'])
+    let [selectedIdServico, setSelectedIdServico] = useState('')
+
+
+    const handleChange = (ev) => {
+        setSelectedId(ev.target.value)
+    }
+    const handleChangeServico = (ev) => {
+        setSelectedIdServico(ev.target.value)
+    }
 
 
     useEffect(() => {
         async function fetchServicos() {
             let res = await axios('http://localhost:3000/servicos')
-            setDados(res.data)
+            setServicos(res.data)
         }
+
+        async function fetchProfissional() {
+            let res = await axios('http://localhost:3000/servicos')
+            setProficional(res.data)
+        }
+
+        fetchProfissional()
         fetchServicos()
     }, [])
     return (
@@ -41,7 +61,7 @@ function Home() {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        gap:'20px',
+                        gap: '20px',
                         overflow: "hidden"
                     }
                 }}
@@ -50,18 +70,36 @@ function Home() {
                 <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
 
                 <label htmlFor="">Nome Completo</label>
-                <input type="text"  placeholder='Nome' />
+                <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
                 <label htmlFor="">Profissional</label>
-                <select name="" id="">
+                <select name="" id="" value={selectedId} onChange={handleChange}>
                     <option value="" selected disabled>Escolher profissional</option>
+                    {
+                        profissional.map((profissional) => (
+                            <option key={profissional.id} value={profissional.id}>
+                                {profissional.nome}
+                            </option>
+                        ))
+                    }
                 </select>
                 <label htmlFor="">Serviço</label>
-                <select name="" id="">
+                <select name="" id="" value={selectedIdServico} onChange={handleChangeServico}>
                     <option value="" selected disabled>Escolher serviço</option>
+                    {
+                        servicos.map((servico) => (
+                            <option key={servico.id} value={servico.id}>
+                                {servico.nome}
+                            </option>
+                        ))
+                    }
                 </select>
                 <label htmlFor="">Horario</label>
                 <ul>
-                    <li><button>15:00</button></li>
+                    {
+                        horarios.map((horario) => (
+                            <li><label htmlFor=""><input type="radio" name='horario' value={horario} />{horario}</label></li>
+                        ))
+                    }
                 </ul>
 
                 <button>Agendar Horário</button>
@@ -90,12 +128,12 @@ function Home() {
                 <h1>Serviços</h1>
                 <div className="container-cards">
                     {
-                        dados.map(dado => (<>
+                        servicos.map(servico => (<>
                             <div className='cardServicos'>
                                 <div className="img-card"></div>
                                 <div className="card-text">
-                                    <h1>{dado.nome}</h1>
-                                    <p>{dado.preco}</p>
+                                    <h1>{servico.nome}</h1>
+                                    <p>{servico.preco}</p>
                                 </div>
                             </div>
                         </>))
