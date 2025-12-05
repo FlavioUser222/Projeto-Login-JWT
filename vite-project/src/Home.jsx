@@ -4,29 +4,26 @@ import Modal from 'react-modal';
 
 
 function Home() {
-
-
-
     let [servicos, setServicos] = useState([])
     const [modalIsOpen, setModalIsOpen] = useState(false)
     let [nome, setNome] = useState('')
-    let [selectedId, setSelectedId] = useState('')
+    let [selectedIdProfissional, setSelectedIdProfissional] = useState('')
     let [profissional, setProficional] = useState([])
     let [horarios, setHorarios] = useState(['8:00', '9:00', '10:00'])
     let [selectedIdServico, setSelectedIdServico] = useState('')
 
 
-    const handleChange = (ev) => {
-        setSelectedId(ev.target.value)
+    const handleChangeProfissional = (ev) => {
+        setSelectedIdProfissional(ev.target.value)
     }
     const handleChangeServico = (ev) => {
         setSelectedIdServico(ev.target.value)
     }
 
-    
+
     async function postAgendamento() {
         let res = await axios.post('http://localhost:3000/agendamento', {
-            nome, selectedId, selectedIdServico, profissional, horarios
+            nome, selectedIdProfissional, selectedIdServico, profissional, horarios
         })
 
     }
@@ -82,7 +79,7 @@ function Home() {
                 <label htmlFor="">Nome Completo</label>
                 <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
                 <label htmlFor="">Profissional</label>
-                <select name="" id="" value={selectedId} onChange={handleChange}>
+                <select name="" id="" value={selectedIdProfissional} onChange={handleChangeProfissional}>
                     <option value="" selected disabled>Escolher profissional</option>
                     {
                         profissional.map((profissional) => (
