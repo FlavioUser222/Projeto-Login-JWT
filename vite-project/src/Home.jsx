@@ -23,6 +23,15 @@ function Home() {
         setSelectedIdServico(ev.target.value)
     }
 
+    
+    async function postAgendamento() {
+        let res = await axios.post('http://localhost:3000/agendamento', {
+            nome, selectedId, selectedIdServico, profissional, horarios
+        })
+
+    }
+
+
 
     useEffect(() => {
         async function fetchServicos() {
@@ -37,6 +46,7 @@ function Home() {
 
         fetchProfissional()
         fetchServicos()
+
     }, [])
     return (
         <>
