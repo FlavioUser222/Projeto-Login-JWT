@@ -29,7 +29,6 @@ function Home() {
     }
 
 
-
     useEffect(() => {
         async function fetchServicos() {
             let res = await axios('http://localhost:3000/servicos')
@@ -75,21 +74,6 @@ function Home() {
 
                 <div className="modal-content">
                     <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
-
-                    <label htmlFor="">Nome Completo</label>
-                    <input type="text" placeholder='Nome' />
-                    <label htmlFor="">Profissional</label>
-                    <select name="" id="">
-                        <option value="" selected disabled>Escolher profissional</option>
-                    </select>
-                    <label htmlFor="">Serviço</label>
-                    <select name="" id="">
-                        <option value="" selected disabled>Escolher serviço</option>
-                    </select>
-                    <label htmlFor="">Horario</label>
-                    <ul>
-                        <li><button>15:00</button></li>
-                    </ul>
 
                     <label htmlFor="">Nome Completo</label>
                     <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
