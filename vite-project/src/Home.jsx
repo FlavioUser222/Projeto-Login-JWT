@@ -71,8 +71,8 @@ function Home() {
                         gap: '20px',
                         overflow: "hidden"
                     }
-                }}
-            >
+                }}>
+
                 <div className="modal-content">
                     <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
 
@@ -91,45 +91,42 @@ function Home() {
                         <li><button>15:00</button></li>
                     </ul>
 
-<<<<<<< Updated upstream
-                <label htmlFor="">Nome Completo</label>
-                <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
-                <label htmlFor="">Profissional</label>
-                <select name="" id="" value={selectedIdProfissional} onChange={handleChangeProfissional}>
-                    <option value="" selected disabled>Escolher profissional</option>
-                    {
-                        profissional.map((profissional) => (
-                            <option key={profissional.id} value={profissional.id}>
-                                {profissional.nome}
-                            </option>
-                        ))
-                    }
-                </select>
-                <label htmlFor="">Serviço</label>
-                <select name="" id="" value={selectedIdServico} onChange={handleChangeServico}>
-                    <option value="" selected disabled>Escolher serviço</option>
-                    {
-                        servicos.map((servico) => (
-                            <option key={servico.id} value={servico.id}>
-                                {servico.nome}
-                            </option>
-                        ))
-                    }
-                </select>
-                <label htmlFor="">Horario</label>
-                <ul>
-                    {
-                        horarios.map((horario) => (
-                            <li><label htmlFor=""><input type="radio" name='horario' value={horario} />{horario}</label></li>
-                        ))
-                    }
-                </ul>
+                    <label htmlFor="">Nome Completo</label>
+                    <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
+                    <label htmlFor="">Profissional</label>
+                    <select name="" id="" value={selectedIdProfissional} onChange={handleChangeProfissional}>
+                        <option value="" selected disabled>Escolher profissional</option>
+                        {
+                            profissional.map((profissional) => (
+                                <option key={profissional.id} value={profissional.id}>
+                                    {profissional.nome}
+                                </option>
+                            ))
+                        }
+                    </select>
+                    <label htmlFor="">Serviço</label>
+                    <select name="" id="" value={selectedIdServico} onChange={handleChangeServico}>
+                        <option value="" selected disabled>Escolher serviço</option>
+                        {
+                            servicos.map((servico) => (
+                                <option key={servico.id} value={servico.id}>
+                                    {servico.nome}
+                                </option>
+                            ))
+                        }
+                    </select>
+                    <label htmlFor="">Horario</label>
+                    <ul>
+                        {
+                            horarios.map((horario) => (
+                                <li><label htmlFor=""><input type="radio" name='horario' value={horario} />{horario}</label></li>
+                            ))
+                        }
+                    </ul>
 
-                <button>Agendar Horário</button>
-=======
                     <button>Agendar Horário</button>
                 </div>
->>>>>>> Stashed changes
+
             </Modal >
 
             <header>
@@ -237,10 +234,8 @@ function Home() {
 
 
                 </div>
-
             </div>
-        </>
-    )
+        </>)
 }
 
 export default Home
