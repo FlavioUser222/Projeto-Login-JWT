@@ -7,9 +7,11 @@ import useProfissionais from './hooks/useProfissionais';
 import ModalHome from './components/modalHome';
 
 function Home() {
+
     const servicos = useServicos()
     const profissionais = useProfissionais()
     const [modal, setModal] = useState(false)
+
 
     return (
         <>
@@ -65,7 +67,6 @@ function Home() {
                         </div>
                     </div>
                 </div>
-
 
 
                 <h1>Unidades</h1>

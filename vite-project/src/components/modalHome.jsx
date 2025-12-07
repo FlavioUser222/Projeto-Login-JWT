@@ -2,13 +2,14 @@ import { useState } from "react"
 import Modal from "react-modal"
 import axios from "axios"
 
+
+
 export default function ModalHome({ isOpen, onClose, servicos, profissionais }) {
     let [nome, setNome] = useState('')
     let [selectedIdProfissional, setSelectedIdProfissional] = useState('')
     let [horarios, setHorarios] = useState(['8:00', '9:00', '10:00'])
     let [selectedHorario, setSelectedHorario] = useState('')
     let [selectedIdServico, setSelectedIdServico] = useState('')
-
 
     const handleChangeProfissional = (ev) => {
         setSelectedIdProfissional(ev.target.value)
@@ -57,46 +58,55 @@ export default function ModalHome({ isOpen, onClose, servicos, profissionais }) 
                 }
             }}
         >
-            <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
 
-            <label htmlFor="">Nome Completo</label>
-            <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
-            <label htmlFor="">Profissional</label>
-            <select name="" id="" value={selectedIdProfissional} onChange={handleChangeProfissional}>
-                <option value="" selected disabled>Escolher profissional</option>
-                {
-                    profissionais.map((profissional) => (
-                        <option key={profissional.id} value={profissional.id}>
-                            {profissional.nome}
-                        </option>
-                    ))
-                }
-            </select>
-            <label htmlFor="">Serviço</label>
-            <select name="" id="" value={selectedIdServico} onChange={handleChangeServico}>
-                <option value="" selected disabled>Escolher serviço</option>
-                {
-                    servicos.map((servico) => (
-                        <option key={servico.id} value={servico.id}>
-                            {servico.nome}
-                        </option>
-                    ))
-                }
-            </select>
-            <label htmlFor="">Horario</label>
-            <ul>
-                {
-                    horarios.map((horario, index) => (
-                        <li key={index}>
-                            <label htmlFor="">
-                                <input type="radio" name='horario' value={horario} onChange={() => { setSelectedHorario(horario) }} />{horario}
-                            </label>
-                        </li>
-                    ))
-                }
-            </ul>
+            <div className="modal-container">
+                <h2 style={{ color: '#fff' }}>Agendar Horário</h2>
 
-            <button onClick={() => { postAgendamento }}>Agendar Horário</button>
+                <label htmlFor="">Nome Completo</label>
+                <input type="text" placeholder='Nome' value={nome} onChange={text => setNome(text.target.value)} />
+                <div className="wrapper-selects">
+                    <div className="select-profissional">
+                        <label htmlFor="">Profissional</label>
+                        <select name="" id="" value={selectedIdProfissional} onChange={handleChangeProfissional}>
+                            <option value="" selected disabled>Escolher profissional</option>
+                            {
+                                profissionais.map((profissional) => (
+                                    <option key={profissional.id} value={profissional.id}>
+                                        {profissional.nome}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
+                    <div className="select-servico">
+                        <label htmlFor="">Serviço</label>
+                        <select name="" id="" value={selectedIdServico} onChange={handleChangeServico}>
+                            <option value="" selected disabled>Escolher serviço</option>
+                            {
+                                servicos.map((servico) => (
+                                    <option key={servico.id} value={servico.id}>
+                                        {servico.nome}
+                                    </option>
+                                ))
+                            }
+                        </select>
+                    </div>
+                </div>
+                <label htmlFor="">Horario</label>
+                <ul>
+                    {
+                        horarios.map((horario, index) => (
+                            <li key={index}>
+                                <label htmlFor="">
+                                    <input type="radio" name='horario' value={horario} onChange={() => { setSelectedHorario(horario) }} />{horario}
+                                </label>
+                            </li>
+                        ))
+                    }
+                </ul>
+
+                <button onClick={() => { postAgendamento }}>Agendar Horário</button>
+            </div>
         </Modal>
     )
 }
