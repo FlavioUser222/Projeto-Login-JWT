@@ -5,6 +5,8 @@ import useServicos from "./hooks/useServicos";
 import useProfissionais from "./hooks/useProfissionais";
 import ModalHome from "./components/modalHome";
 
+
+
 function Home() {
     const servicos = useServicos();
     const profissionais = useProfissionais();

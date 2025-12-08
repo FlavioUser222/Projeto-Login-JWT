@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
+import TabLateral from './components/tabDashboard'
 
 
 export default function Dashboard() {
@@ -20,10 +21,14 @@ export default function Dashboard() {
         <header>
             <h1>Dashboard</h1>
         </header>
-        
-        <input type="text" value={nome} onChange={text => { setNome(text.target.value) }} />
-        <input type="number" value={preco} onChange={text => { setPreco(text.target.value) }} />
-        <input type="number" value={duracao} onChange={text => { setDuracao(text.target.value) }} />
-        <button onClick={() => { postServicos() }}>Cadastrar Serviço</button>
+
+        <TabLateral />
+
+        <div className="container-dashboard">
+            <input type="text" value={nome} onChange={text => { setNome(text.target.value) }} />
+            <input type="number" value={preco} onChange={text => { setPreco(text.target.value) }} />
+            <input type="number" value={duracao} onChange={text => { setDuracao(text.target.value) }} />
+            <button onClick={() => { postServicos() }}>Cadastrar Serviço</button>
+        </div>
     </>)
 }
