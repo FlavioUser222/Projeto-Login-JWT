@@ -1,8 +1,8 @@
 
 
-export default function ButtonTabs() {
+export default function ButtonTabs({ nome }) {
 
     return (
-        <button>Teste</button>
+        <button>{nome}</button>
     )
 }
