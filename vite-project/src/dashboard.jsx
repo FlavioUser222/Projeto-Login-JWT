@@ -18,7 +18,7 @@ export default function Dashboard() {
     }
 
     return (<>
-        <header>
+        <header className="headerDashboard">
             <h1>Dashboard</h1>
         </header>
 

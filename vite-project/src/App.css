@@ -33,8 +33,6 @@ select {
 }
 
 
-
-
 .Inputs-div {
   width: 100%;
   max-width: 500px;
@@ -66,6 +64,14 @@ select {
   margin-top: 20px;
   border-radius: 10px;
 }
+
+
+.headerDashboard {
+  padding: 10px;
+  background-color: rgb(88, 88, 88);
+  border-bottom: 1px solid grey;
+}
+
 
 
 .headerUl {
@@ -110,6 +116,15 @@ header a {
   height: 100vh;
 
 }
+
+.tab-container {
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+
 
 .tab-container button {
   width: 100%;

@@ -7,13 +7,13 @@ export default function TabLateral() {
 
         <div className="lateral-bar">
             <div className="tab-container">
-                <ButtonTabs />
-                <ButtonTabs />
-                <ButtonTabs />
-                <ButtonTabs />
+                <h2>Geral</h2>
+                <ButtonTabs nome={"Dashboard"} />
+                <ButtonTabs nome={"Agendamentos"} />
+                <ButtonTabs nome={"Serviços"} />
+                <ButtonTabs nome={"Funcionários"} />
+                <hr />
             </div>
-
-
         </div>
     )
 
