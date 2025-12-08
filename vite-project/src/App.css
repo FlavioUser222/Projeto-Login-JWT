@@ -108,6 +108,69 @@ header a {
   gap: 20px;
 }
 
+.wrapper-selects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.wrapper-selects select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+label {
+  font-size: 22px;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+.modal-container input {
+  border-radius: 6px;
+  width: 100%;
+  padding: 12px 20px;
+}
+
+
+
+.modal-container li {
+  background-color: #797979;
+  margin-left: 10px;
+  border-radius: 6px;
+}
+
+.modal-container {
+  width: 100%;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+li label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.select-profissional,
+.select-servico {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
 p {
   color: white;
 }
