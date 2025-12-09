@@ -88,13 +88,6 @@ p {
   border-bottom: 1px solid grey;
 }
 
-.ReactModal__Content {
-  width: 100%;
-  max-width: 620px;
-  min-height: 600px;
-}
-
-
 
 
 .headerUl {
