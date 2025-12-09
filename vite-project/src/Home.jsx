@@ -90,8 +90,8 @@ function Home() {
                 <h1 id="contatos">Unidades</h1>
                 <div className="container-endereco">
                     <div className="img-endereco">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.581638804753!2d-46.516329604366014!3d-18.5834670606245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8ad03bba98e3%3A0x69765dec93dc8aeb!2sPrime%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1765210617246!5m2!1spt-BR!2sbr" style={{ width: '300px', height: '300px', borderRadius: '8px' }} ></iframe>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.581638804753!2d-46.516329604366014!3d-18.5834670606245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8ad03bba98e3%3A0x69765dec93dc8aeb!2sPrime%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1765210617246!5m2!1spt-BR!2sbr" style={{ width: '300px', height: '300px', borderRadius: '8px' }} ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.581638804753!2d-46.516329604366014!3d-18.5834670606245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8ad03bba98e3%3A0x69765dec93dc8aeb!2sPrime%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1765210617246!5m2!1spt-BR!2sbr" style={{ width: '100%', maxWidth: '300px', height: '300px', borderRadius: '8px' }} ></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.581638804753!2d-46.516329604366014!3d-18.5834670606245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ae8ad03bba98e3%3A0x69765dec93dc8aeb!2sPrime%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1765210617246!5m2!1spt-BR!2sbr" style={{ width: '100%', maxWidth: '300px', height: '300px', borderRadius: '8px' }} ></iframe>
                     </div>
                 </div>
             </div>
