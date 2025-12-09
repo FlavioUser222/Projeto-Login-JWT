@@ -4,6 +4,7 @@ import Cadastro from './Cadastro'
 import Home from "./Home"
 import PrivateRoute from "./PrivateRoute"
 import Dashboard from "./dashboard"
+import ServicosDashboard from "./components/servicosDashboard"
 
 
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/servicos/dashboard" element={<ServicosDashboard />}/>
 
         <Route
           path="/dashboard"

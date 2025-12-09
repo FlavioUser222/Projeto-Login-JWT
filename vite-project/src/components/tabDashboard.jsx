@@ -1,5 +1,5 @@
 import ButtonTabs from "./buttonTabs";
-
+import { Link } from "react-router-dom"
 
 export default function TabLateral() {
 
@@ -7,10 +7,9 @@ export default function TabLateral() {
 
         <div className="lateral-bar">
             <div className="tab-container">
-                <h2>Geral</h2>
-                <ButtonTabs nome={"Dashboard"} />
+                <Link to="/dashboard" >Dashboard</Link>
                 <ButtonTabs nome={"Agendamentos"} />
-                <ButtonTabs nome={"Serviços"} />
+                <Link to="/servicos/dashboard" >Servicos</Link>
                 <ButtonTabs nome={"Funcionários"} />
                 <hr />
             </div>
