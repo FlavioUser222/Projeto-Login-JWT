@@ -23,10 +23,8 @@ function Home() {
                 profissionais={profissionais}
             />
             <header>
+                <img src="../public/assets/778 branco.png" alt="" />
                 <ul className="headerUl">
-                    <li>
-                        <img src="../public/assets/778 branco.png" alt="" />
-                    </li>
                     <li>
                         <a href="#servicos">Serviços</a>
                     </li>

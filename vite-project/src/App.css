@@ -60,7 +60,8 @@ select {
   width: 100%;
 }
 
-.mainContent h1,p{
+.mainContent h1,
+p {
   font-weight: 700;
   text-shadow: 3px 3px #303030;
 }
@@ -95,8 +96,10 @@ select {
   align-items: center;
   color: white;
   gap: 50px;
-  width: 80%;
+  width: 100%;
+  max-width: 80%;
   font-size: 28px;
+  flex-wrap: wrap;
 }
 
 header {
