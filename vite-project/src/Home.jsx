@@ -67,6 +67,7 @@ function Home() {
                             key={servico.id}
                             nome={servico.nome}
                             preco={servico.preco}
+                            tempo={servico.duracao}
                         ></CardServicos>
                     ))}
                 </div>
@@ -78,15 +79,6 @@ function Home() {
                             <div className="cards-track">
                                 {profissionais.map((profissional) => (
                                     <>
-                                        <CardFuncionarios
-                                            nome={profissional.nome}
-                                        ></CardFuncionarios>
-                                        <CardFuncionarios
-                                            nome={profissional.nome}
-                                        ></CardFuncionarios>
-                                        <CardFuncionarios
-                                            nome={profissional.nome}
-                                        ></CardFuncionarios>
                                         <CardFuncionarios
                                             nome={profissional.nome}
                                         ></CardFuncionarios>
