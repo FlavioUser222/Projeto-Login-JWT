@@ -12,22 +12,18 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/home" element={<Home />} />
 
-  
         <Route
-          path="/home"
+          path="/dashboard"
           element={
             <PrivateRoute>
-              <Home />
-              
-
-
+              <Dashboard />
             </PrivateRoute>
           }
         />
-      </Routes>
-    </BrowserRouter>
+    </Routes>
+    </BrowserRouter >
   )
 }
 
