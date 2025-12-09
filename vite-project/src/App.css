@@ -60,6 +60,14 @@ select {
   width: 100%;
 }
 
+.mainContent h1,p{
+  font-weight: 700;
+  text-shadow: 3px 3px #303030;
+}
+
+
+
+
 .cardServicos {
   display: flex;
   flex-direction: column;
