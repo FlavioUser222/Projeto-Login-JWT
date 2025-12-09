@@ -8,9 +8,11 @@ export default function TabLateral() {
         <div className="lateral-bar">
             <div className="tab-container">
                 <Link to="/dashboard" >Dashboard</Link>
-                <ButtonTabs nome={"Agendamentos"} />
+                <Link to="/dashboard" >Agendamentos</Link>
                 <Link to="/servicos/dashboard" >Servicos</Link>
-                <ButtonTabs nome={"Funcionários"} />
+
+                <Link to="/dashboard" >Funcionarios</Link>
+
                 <hr />
             </div>
         </div>
