@@ -5,8 +5,9 @@ import Home from "./Home"
 import PrivateRoute from "./PrivateRoute"
 import Dashboard from "./dashboard"
 
-function App() {
 
+
+function App() {
   return (
     <BrowserRouter>
       <Routes>
