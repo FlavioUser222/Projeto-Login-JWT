@@ -14,11 +14,15 @@ function App() {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/dashboard" element={<Dashboard/>} />
 
+  
         <Route
           path="/home"
           element={
             <PrivateRoute>
               <Home />
+              
+
+
             </PrivateRoute>
           }
         />
