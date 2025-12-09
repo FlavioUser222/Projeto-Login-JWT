@@ -10,9 +10,7 @@ export default function TabLateral() {
                 <Link to="/dashboard" >Dashboard</Link>
                 <Link to="/dashboard" >Agendamentos</Link>
                 <Link to="/servicos/dashboard" >Servicos</Link>
-
                 <Link to="/dashboard" >Funcionarios</Link>
-
                 <hr />
             </div>
         </div>

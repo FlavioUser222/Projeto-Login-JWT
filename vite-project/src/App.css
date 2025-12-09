@@ -147,15 +147,13 @@ header a {
 }
 
 
-
-.tab-container button {
+.tab-container a {
   width: 100%;
   margin-top: 2px;
+  text-decoration: none;
+  color: white;
+
 }
-
-
-
-
 
 
 .mainContent {
