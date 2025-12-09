@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 export default function TabLateral() {
 
     return (
-
         <div className="lateral-bar">
             <div className="tab-container">
                 <Link to="/dashboard" >Dashboard</Link>
