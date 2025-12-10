@@ -8,18 +8,19 @@ export default function ModalHome({
   servicos,
   profissionais,
 }) {
+  
   let [nome, setNome] = useState("");
   let [selectedIdProfissional, setSelectedIdProfissional] = useState("");
   let [horarios] = useState(["8:00", "9:00", "10:00"]);
   let [selectedHorario, setSelectedHorario] = useState("");
-  let [selectedIdServico, setSelectedIdServico] = useState("");
+  let [selectedIdServico, setSelectedIdServico] = useState("")
 
   const handleChangeProfissional = (ev) => {
     setSelectedIdProfissional(ev.target.value);
-  };
+  }
   const handleChangeServico = (ev) => {
     setSelectedIdServico(ev.target.value);
-  };
+  }
 
   async function postAgendamento() {
     let res = await axios.post("http://localhost:3000/agendamento", {
@@ -30,9 +31,10 @@ export default function ModalHome({
       hora: horarios,
     });
     if (res.status == "200") {
-      alert("Agendamento enviado");
+      alert("Agendamento enviado")
     }
   }
+
 
   return (
     <Modal
