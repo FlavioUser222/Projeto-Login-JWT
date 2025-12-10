@@ -3,6 +3,8 @@ import './App.css'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
 
+
+
 function Login() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
@@ -18,7 +20,7 @@ function Login() {
             }
 
         } catch (error) {
-            alert("Erro ao realizar o login")
+            alert("Erro ao realizar o login!",error)
         }
     }
 
