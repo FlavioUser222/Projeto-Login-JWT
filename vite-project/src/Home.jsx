@@ -21,6 +21,7 @@ function Home() {
         servicos={servicos}
         profissionais={profissionais}
       />
+      
       <header>
         <img src="../public/assets/778 branco.png" alt="" />
         <ul className="headerUl">

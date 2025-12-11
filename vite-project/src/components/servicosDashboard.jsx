@@ -18,15 +18,11 @@ export default function ServicosDashboard() {
         }
     }
 
-
     return (<>
         <HeaderDashboard />
         <TabLateral />
 
-        <input type="text" value={nome} onChange={text => { setNome(text.target.value) }} />
-        <input type="number" value={preco} onChange={text => { setPreco(text.target.value) }} />
-        <input type="number" value={duracao} onChange={text => { setDuracao(text.target.value) }} />
-        <button onClick={() => { postServicos() }}>Cadastrar Serviço</button>
+        
     </>)
 
 
