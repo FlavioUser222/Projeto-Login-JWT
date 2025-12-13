@@ -9,19 +9,20 @@ class Servicos {
         if (!nome, !preco, !duracao) {
             throw new Error("Todos os campos sao obrigatorios!")
         }
+        
         const servicos = {
             nome,
             preco,
             duracao
         }
-
-
         this.Servicos.push(servicos)
     }
 
     listarServico() {
         return this.Servicos
     }
+
+   
 
 }
 

@@ -1,7 +1,9 @@
 const { agendamento } = require("../models/database")
 
 async function postAgendamentoController(req, res) {
-    let { cliente_id, barbeiro_id, servico_id, data, hora, valor, status } = req.body
+    let { cliente_id, barbeiro_id, servico_id, hora, valor, status } = req.body
+
+    agendamento.validarAgendamentos(cliente_id,barbeiro_id,servico_id,hora,valor,status)
 
     const novoAgendamento = agendamento.criarAgendamento(cliente_id, barbeiro_id, servico_id, data, hora, valor, status)
 
@@ -10,7 +12,7 @@ async function postAgendamentoController(req, res) {
 
 async function getAgendamento(req, res) {
     const listaAgendamentos = agendamento.listarAgendamentos()
-
+    
     return res.json(listaAgendamentos)
 }
 
