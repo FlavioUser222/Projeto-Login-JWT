@@ -1,14 +1,15 @@
 const { servico } = require('../models/database')
 
 async function postServicosController(req, res) {
-    let { nome, preco, duracao } = req.body
+    let { nome, preco, duracao,horario } = req.body
 
-    servico.criarServico(nome, preco, duracao)
+    servico.criarServico(nome, preco, duracao,horario)
 
     return res.json({
         nome,
         preco,
-        duracao
+        duracao,
+        horario
     })
 }
 

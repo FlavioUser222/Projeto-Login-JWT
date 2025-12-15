@@ -5,7 +5,7 @@ async function postAgendamentoController(req, res) {
 
     agendamento.validarAgendamentos(cliente_id,barbeiro_id,servico_id,hora,valor,status)
 
-    const novoAgendamento = agendamento.criarAgendamento(cliente_id, barbeiro_id, servico_id, data, hora, valor, status)
+    const novoAgendamento = agendamento.criarAgendamento(cliente_id, barbeiro_id, servico_id, hora, valor, status)
 
     res.status(201).json(novoAgendamento)
 }

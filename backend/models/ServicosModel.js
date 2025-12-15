@@ -5,15 +5,15 @@ class Servicos {
         this.Servicos = []
     }
 
-    criarServico(nome, preco, duracao) {
-        if (!nome, !preco, !duracao) {
+    criarServico(nome, preco, duracao,horario) {
+        if (!nome, !preco, !duracao,!horario) {
             throw new Error("Todos os campos sao obrigatorios!")
         }
-        
         const servicos = {
             nome,
             preco,
-            duracao
+            duracao,
+            horario
         }
         this.Servicos.push(servicos)
     }

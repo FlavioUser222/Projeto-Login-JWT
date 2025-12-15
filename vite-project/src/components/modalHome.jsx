@@ -10,7 +10,6 @@ export default function ModalHome({
 }) {
   let [nome, setNome] = useState("");
   let [selectedIdProfissional, setSelectedIdProfissional] = useState("");
-  let [horarios] = useState(["8:00", "9:00", "10:00"]);
   let [selectedHorario, setSelectedHorario] = useState("");
   let [selectedIdServico, setSelectedIdServico] = useState("");
 
@@ -23,9 +22,9 @@ export default function ModalHome({
 
   async function postAgendamento() {
     let res = await axios.post("http://localhost:3000/agendamento", {
-      nome,
-      profissionalId: selectedIdProfissional,
-      servicoId: selectedIdServico,
+      cliente_id: nome,
+      barbeiro_id: selectedIdProfissional,
+      servico_id: selectedIdServico,
       hora: selectedHorario,
       valor: 30,
       status: "Em andamento",
@@ -113,18 +112,18 @@ export default function ModalHome({
         </div>
         <label htmlFor="">Horario</label>
         <ul>
-          {horarios.map((horario, index) => (
+          {servicos.map((servico, index) => (
             <li key={index}>
               <label htmlFor="">
                 <input
                   type="radio"
                   name="horario"
-                  value={selectedHorario}
+                  value={servico.horario}
                   onChange={() => {
-                    setSelectedHorario(horario);
+                    setSelectedHorario(servico.horario);
                   }}
                 />
-                {horario}
+                {servico.horario}
               </label>
             </li>
           ))}
