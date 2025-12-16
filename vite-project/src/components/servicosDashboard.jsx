@@ -42,8 +42,7 @@ export default function ServicosDashboard() {
           </div>
 
           <InfoTable servicos={servicos}></InfoTable>
-        </div>
-        {/* 
+
            <input
             type="text"
             value={nome}
@@ -59,7 +58,7 @@ export default function ServicosDashboard() {
             }}
           />
           <input
-            type="number"
+            type="time"
             value={duracao}
             onChange={(text) => {
               setDuracao(text.target.value);
@@ -79,7 +78,7 @@ export default function ServicosDashboard() {
           >
             Cadastrar
           </button> 
-        </div> */}
+        </div> 
       </ContainerDashboard>
     </>
   );

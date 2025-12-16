@@ -1,4 +1,5 @@
-const { usuario } = require("../models/database")
+// const { usuario } = require("../models/database")
+const UserRepository = require('../repos/userRepository')
 
 const bcrypt = require("bcryptjs")
 const jwt = require('jsonwebtoken')
@@ -6,7 +7,7 @@ const jwt = require('jsonwebtoken')
 async function Login(req, res) {
     const { email, senha } = req.body;
 
-    const user = usuario.encontrarUsuario(email)
+    const user = UserRepository.encontrarUsuario(email)
 
     const senhaValida = await bcrypt.compare(senha, user.senha)
 

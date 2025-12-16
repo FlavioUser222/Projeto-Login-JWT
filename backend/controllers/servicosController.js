@@ -1,23 +1,26 @@
-const { servico } = require('../models/database')
+// const { servico } = require('../models/database')
+const servicosRepository = require("../repos/ServicosRepository");
 
 async function postServicosController(req, res) {
-    let { nome, preco, duracao,horario } = req.body
+  
+  let { nome, preco, duracao, horario } = req.body;
 
-    servico.criarServico(nome, preco, duracao,horario)
+  const servicoCriado = await servicosRepository.criarServico(
+    nome,
+    preco,
+    duracao,
+    horario
+  );
 
-    return res.json({
-        nome,
-        preco,
-        duracao,
-        horario
-    })
+  return res.status(201).json(servicoCriado);
 }
 
 async function getServicosController(req, res) {
-    return res.json(servico.listarServico())
+  const servicos = await servicosRepository.listarServicos();
+  return res.json(servicos)
 }
 
 module.exports = {
-    postServicosController,
-    getServicosController
-}
+  postServicosController,
+  getServicosController,
+};

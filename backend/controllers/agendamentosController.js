@@ -1,23 +1,26 @@
-const { agendamento } = require("../models/database")
+// const { agendamento } = require("../models/database")
+const AgendamentosRepository = require("../repos/AgendamentosRepository");
 
 async function postAgendamentoController(req, res) {
-    let { cliente_id, barbeiro_id, servico_id, hora, valor, status } = req.body
+  let { cliente_id, barbeiro_id, servico_id, hora, valor, status } = req.body;
 
-    agendamento.validarAgendamentos(cliente_id,barbeiro_id,servico_id,hora,valor,status)
-
-    const novoAgendamento = agendamento.criarAgendamento(cliente_id, barbeiro_id, servico_id, hora, valor, status)
-
-    res.status(201).json(novoAgendamento)
+  const novoAgendamento = await AgendamentosRepository.criarAgendamentos(
+    cliente_id,
+    barbeiro_id,
+    servico_id,
+    hora,
+    valor,
+    status
+  );
+  res.status(201).json(novoAgendamento);
 }
 
 async function getAgendamento(req, res) {
-    const listaAgendamentos = agendamento.listarAgendamentos()
-    
-    return res.json(listaAgendamentos)
+  const listaAgendamentos = AgendamentosRepository.listarAgendamentos();
+  return res.json(listaAgendamentos);
 }
 
 module.exports = {
-    postAgendamentoController,
-    getAgendamento
-
-}
+  postAgendamentoController,
+  getAgendamento,
+};
