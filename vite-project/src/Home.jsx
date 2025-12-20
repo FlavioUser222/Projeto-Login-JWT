@@ -2,13 +2,13 @@ import { useState } from "react";
 import CardServicos from "./components/cardServicos";
 import CardFuncionarios from "./components/cardFuncionarios";
 import useServicos from "./hooks/useServicos";
-import useProfissionais from "./hooks/useProfissionais";
 import ModalHome from "./components/modalHome";
 import { Link } from "react-router-dom";
+import useFuncionario from "./hooks/useFuncionario";
 
 function Home() {
   const servicos = useServicos();
-  const profissionais = useProfissionais();
+  const funcionario = useFuncionario();
   const [modal, setModal] = useState(false);
 
   return (
@@ -19,9 +19,9 @@ function Home() {
           setModal(false);
         }}
         servicos={servicos}
-        profissionais={profissionais}
+        profissionais={funcionario}
       />
-      
+
       <header>
         <img src="../public/assets/778 branco.png" alt="" />
         <ul className="headerUl">
@@ -75,10 +75,10 @@ function Home() {
           <div className="container-equipe">
             <div className="container-cards">
               <div className="cards-track">
-                {profissionais.map((profissional) => (
+                {funcionario.map((funcionario) => (
                   <>
                     <CardFuncionarios
-                      nome={profissional.nome}
+                      nome={funcionario.nome}
                     ></CardFuncionarios>
                   </>
                 ))}

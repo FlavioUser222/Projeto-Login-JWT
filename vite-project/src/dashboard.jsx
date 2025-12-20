@@ -8,7 +8,6 @@ export default function Dashboard() {
     <>
       <HeaderDashboard />
       <TabLateral />
-      
       <ContainerDashboard>
         <CardDashboard title={"Total de clientes"} value={1000} />
         <CardDashboard title={"Total de Servicos"} value={1200} />

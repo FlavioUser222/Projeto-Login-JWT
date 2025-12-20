@@ -16,7 +16,7 @@ async function postAgendamentoController(req, res) {
 }
 
 async function getAgendamento(req, res) {
-  const listaAgendamentos = AgendamentosRepository.listarAgendamentos();
+  const listaAgendamentos = await AgendamentosRepository.listarAgendamentos();
   return res.json(listaAgendamentos);
 }
 

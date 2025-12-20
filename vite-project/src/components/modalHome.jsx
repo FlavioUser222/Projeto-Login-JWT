@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
+import SelectComponent from "./selectComponent";
 
 export default function ModalHome({
   isOpen,
@@ -74,40 +75,20 @@ export default function ModalHome({
         />
         <div className="wrapper-selects">
           <div className="select-profissional">
-            <label htmlFor="">Profissional</label>
-            <select
-              name=""
-              id=""
+            <SelectComponent
+              label={"Profissional"}
               value={selectedIdProfissional}
               onChange={handleChangeProfissional}
-            >
-              <option value="" selected disabled>
-                Escolher profissional
-              </option>
-              {profissionais.map((profissional) => (
-                <option key={profissional.id} value={profissional.id}>
-                  {profissional.nome}
-                </option>
-              ))}
-            </select>
+              options={profissionais}
+            ></SelectComponent>
           </div>
           <div className="select-servico">
-            <label htmlFor="">Serviço</label>
-            <select
-              name=""
-              id=""
+            <SelectComponent
+              label={"Servicos"}
               value={selectedIdServico}
               onChange={handleChangeServico}
-            >
-              <option value="" selected disabled>
-                Escolher serviço
-              </option>
-              {servicos.map((servico) => (
-                <option key={servico.id} value={servico.id}>
-                  {servico.nome}
-                </option>
-              ))}
-            </select>
+              options={servicos}
+            ></SelectComponent>
           </div>
         </div>
         <label htmlFor="">Horario</label>

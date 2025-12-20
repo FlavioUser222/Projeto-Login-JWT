@@ -3,7 +3,7 @@ const db = require("../services/conectionDB");
 class AgendamentosRepository {
 
   async listarAgendamentos() {
-    const { rows } = await db.query("SELECT * FROM agendamentos");
+    const { rows } = await db.query("SELECT*FROM agendamentos");
     return rows;
   }
   async criarAgendamentos(
