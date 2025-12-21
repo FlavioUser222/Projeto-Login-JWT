@@ -1,29 +1,33 @@
 // const { usuario } = require("../models/database")
-const UserRepository = require('../repos/userRepository')
+const UserRepository = require("../repos/userRepository");
 
-const bcrypt = require("bcryptjs")
-const jwt = require('jsonwebtoken')
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 async function Login(req, res) {
-    const { email, senha } = req.body;
+  const { email, senha } = req.body;
 
-    const user = UserRepository.encontrarUsuario(email)
+  const user = await UserRepository.encontrarUsuario(email);
+  console.log(user)
 
-    const senhaValida = await bcrypt.compare(senha, user.senha)
+  if (!user) {
+    return res.status(401).json({ error: "Usuário ou senha inválidos" });
+  }
 
-    if (!senhaValida) {
-        return res.json({ message: "Senha invalida" })
-    }
-    const token = jwt.sign({ email }, 'segredo1234', { expiresIn: '1h' })
+  const senhaValida = await bcrypt.compare(senha, user.senha);
 
-    return res.json({
-        message: "login realizado com sucesso",
-        token
-    })
+  if (!senhaValida) {
+    return res.json({ message: "Senha invalida" });
+  }
 
+  const token = jwt.sign({ email }, "segredo1234", { expiresIn: "1h" });
+
+  return res.json({
+    message: "login realizado com sucesso",
+    token,
+  });
 }
-
 
 module.exports = {
-    Login
-}
+  Login,
+};

@@ -1,20 +1,23 @@
-const jwt = require('jsonwebtoken')
-const { usuario } = require('../models/database')
+const jwt = require("jsonwebtoken");
+const user = require("../repos/userRepository");
 
+async function verificaToken(req, res, next) {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+  if (!token) return res.status(401).json({ message: "Token não encontrado" });
+  const decoded = jwt.verify(token, "segredo1234");
+  const usuario = await userRepository.encontrarUsuario(decoded.email);
 
-function verificaToken(req, res, next) {
-    const authHeader = req.headers['authorization']
-    const token = authHeader && authHeader.split(' ')[1]
-    if (!token) return res.status(401).json({ message: 'Token não encontrado' })
+  if (!usuario) {
+    return res
+      .status(404)
+      .json({ message: "Usuário não encontrado no sistema" });
+  }
 
-    jwt.verify(token, 'segredo1234', (err, user) => {
-        if (err) return res.status(403).json({ message: 'Token inválido' })
-        req.usuario = user
-        next()
-    })
+  req.user = usuario;
+  next();
 }
-
 
 module.exports = {
-    verificaToken
-}
+  verificaToken,
+};
