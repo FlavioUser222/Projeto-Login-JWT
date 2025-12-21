@@ -107,6 +107,24 @@ p {
   flex-wrap: wrap;
 }
 
+@media (max-width:786px) {
+  header {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .img-endereco {
+    flex-direction: column;
+  }
+
+  .headerUl {
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+}
+
+
+
 header {
   display: flex;
   justify-content: space-between;
@@ -141,6 +159,7 @@ header a {
 .info-table {
   width: 100%;
 }
+
 .info-table th,
 .info-table td {
   text-align: center;
