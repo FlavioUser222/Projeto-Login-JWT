@@ -79,6 +79,9 @@ function Home() {
                   <>
                     <CardFuncionarios
                       nome={funcionario.nome}
+                      facebook={funcionario.facebook}
+                      instagram={funcionario.instagram}
+                      whatsapp={funcionario.whatsapp}
                     ></CardFuncionarios>
                   </>
                 ))}
