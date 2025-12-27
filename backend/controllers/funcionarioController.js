@@ -20,7 +20,13 @@ async function getFuncionario(req, res) {
   res.send(listaFuncionarios);
 }
 
+async function getTotalFuncionario(req, res) {
+  let totalFuncionario = await FuncionarioRepository.getTotalFuncionario();
+  return res.send(totalFuncionario);
+}
+
 module.exports = {
   postFuncionario,
   getFuncionario,
+  getTotalFuncionario
 };

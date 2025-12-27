@@ -28,18 +28,14 @@ export default function ServicosDashboard() {
           }}
           value={servicos}
         ></ModalDashboard>
-        
+
         <InfoTable>
           <thead>
             <tr>
-              {servicos.map((servico, index) => (
-                <tr key={servico.id ?? index}>
-                  <th>{servico.nome}</th>
-                  <th>{servico.preco}</th>
-                  <th>{servico.duracao}</th>
-                  <th>{servico.horario}</th>
-                </tr>
-              ))}
+              <th>Nome</th>
+              <th>Preço</th>
+              <th>Duração</th>
+              <th>Horario</th>
             </tr>
           </thead>
 

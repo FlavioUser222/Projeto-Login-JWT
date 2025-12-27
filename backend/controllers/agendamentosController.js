@@ -12,6 +12,7 @@ async function postAgendamentoController(req, res) {
     valor,
     status
   );
+
   res.status(201).json(novoAgendamento);
 }
 
@@ -20,7 +21,13 @@ async function getAgendamento(req, res) {
   return res.json(listaAgendamentos);
 }
 
+async function getTotalAgendamentos(req,res){
+  const agendamentosTotais = await AgendamentosRepository.getTotalAgendamentos()
+  return res.json(agendamentosTotais)
+}
+
 module.exports = {
   postAgendamentoController,
   getAgendamento,
+  getTotalAgendamentos
 };

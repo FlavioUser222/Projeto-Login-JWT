@@ -11,13 +11,17 @@ html {
   scroll-behavior: smooth;
 }
 
+thead {
+  width: 100%;
+}
+
+
 .divServicos {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap;
 }
 
 
@@ -80,7 +84,8 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   background-color: #797979;
   height: 370px;
   margin-top: 20px;
@@ -163,12 +168,19 @@ header a {
 .info-table th,
 .info-table td {
   text-align: center;
+  border: 1px solid white;
   padding: 20px;
+}
+
+.top-content h1 {
+  color: white;
 }
 
 .info-table table {
   width: 100%;
+  text-align: center;
   padding: 20px;
+  color: white;
 }
 
 .container-dashboard {
@@ -307,7 +319,8 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 100%;
+  padding: 0px 15px;
 }
 
 
@@ -372,7 +385,7 @@ button {
   display: flex;
   width: 100%;
   gap: 44px;
-  align-items: flex-start;
+  align-items: center;
   animation: deslizar 15s linear infinite;
   will-change: transform;
 }
@@ -404,6 +417,7 @@ button {
   min-height: 400px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 30px;
   scroll-snap-align: start;
 }
@@ -431,7 +445,8 @@ button {
 }
 
 .redes-card {
-
+  display: flex;
+  align-items: center;
   width: 100%;
 
 }
@@ -446,7 +461,7 @@ button {
 .redes-ul {
   display: flex;
   width: 100%;
-  justify-content: center;
+  align-items: center;
   list-style: none;
 }
 

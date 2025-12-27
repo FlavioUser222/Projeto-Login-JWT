@@ -1,14 +1,15 @@
-const { postAgendamentoController, getAgendamento } = require('../controllers/agendamentosController')
+const {
+  postAgendamentoController,
+  getAgendamento,
+  getTotalAgendamentos,
+} = require("../controllers/agendamentosController");
 
 async function agendamentosRoute(app) {
-    app.get('/agendamentos', getAgendamento)
-    app.post('/agendamento', postAgendamentoController)
-
+  app.get("/agendamentos", getAgendamento);
+  app.get("/totalAgendamentos", getTotalAgendamentos);
+  app.post("/agendamento", postAgendamentoController);
 }
 
 module.exports = {
-    agendamentosRoute
-}
-
-
-
+  agendamentosRoute,
+};

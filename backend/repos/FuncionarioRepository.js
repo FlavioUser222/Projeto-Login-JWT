@@ -1,7 +1,6 @@
 const db = require("../services/conectionDB");
 
 class FuncionarioRepository {
-
   async listarFuncionarios() {
     let { rows } = await db.query(`SELECT * FROM barbeiros`);
     return rows;
@@ -14,6 +13,10 @@ class FuncionarioRepository {
     );
 
     return rows[0];
+  }
+  async getTotalFuncionario() {
+    let { rows } = await db.query(`SELECT COUNT(*) AS total from barbeiros`);
+    return rows[0].total;
   }
 }
 

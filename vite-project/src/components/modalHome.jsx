@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 import SelectComponent from "./selectComponent";
+import { formatTime } from "./formatTime";
 
 export default function ModalHome({
   isOpen,
@@ -22,17 +23,22 @@ export default function ModalHome({
   };
 
   async function postAgendamento() {
-    let res = await axios.post("http://localhost:3000/agendamento", {
-      cliente_id: nome,
-      barbeiro_id: selectedIdProfissional,
-      servico_id: selectedIdServico,
-      hora: selectedHorario,
-      valor: 30,
-      status: "Em andamento",
-    });
+    try {
+      let res = await axios.post("http://localhost:3000/agendamento", {
+        cliente_id: nome,
+        barbeiro_id: selectedIdProfissional,
+        servico_id: selectedIdServico,
+        hora: selectedHorario,
+        valor: 30,
+        status: "Em andamento",
+      });
 
-    if (res.status == "200") {
-      alert("Agendamento enviado");
+      if (res.status == "201") {
+        alert("Agendamento criado com sucesso");
+        onClose()
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -104,7 +110,7 @@ export default function ModalHome({
                     setSelectedHorario(servico.horario);
                   }}
                 />
-                {servico.horario}
+                {formatTime(servico.horario)}
               </label>
             </li>
           ))}

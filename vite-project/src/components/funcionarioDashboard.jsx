@@ -3,6 +3,7 @@ import InfoTable from "./infoTable";
 import useFuncionario from "../hooks/useFuncionario";
 import { useState } from "react";
 import ModalDashboard from "./modalDashboard";
+import { formatDate } from "./formatDate";
 
 export default function FuncionarioDashboard() {
   const funcionario = useFuncionario();
@@ -28,7 +29,7 @@ export default function FuncionarioDashboard() {
             setModalOpen(false);
           }}
           
-          value={funcionario}
+          
         ></ModalDashboard>
 
         <InfoTable>
@@ -41,9 +42,10 @@ export default function FuncionarioDashboard() {
 
           <tbody>
             {funcionario.map((funcionario, index) => (
+
               <tr key={funcionario.id ?? index}>
                 <td>{funcionario.nome}</td>
-                <td>{funcionario.admissao}</td>
+                <td>{formatDate(funcionario.adimissao)}</td>
               </tr>
             ))}
           </tbody>

@@ -11,16 +11,17 @@ export default function AgendamentosDashboard() {
         <div className="top-content">
           <h1>Agendamentos</h1>
         </div>
+
         <InfoTable>
           <thead>
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Preço</th>
-                <th>Duração</th>
-                <th>Horário</th>
-              </tr>
-            </thead>
+            <tr>
+              <th>Nome</th>
+              <th>Barbeiro</th>
+              <th>Serviço</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Horário</th>
+            </tr>
           </thead>
 
           <tbody>

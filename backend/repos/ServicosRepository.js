@@ -1,7 +1,6 @@
 const db = require("../services/conectionDB");
 
 class ServicosRepository {
-    
   async listarServicos() {
     const { rows } = await db.query("SELECT* FROM servicos");
     return rows;
@@ -12,9 +11,16 @@ class ServicosRepository {
       `INSERT INTO servicos (nome, preco, duracao, horario) VALUES($1,$2,$3,$4) RETURNING *`,
       [nome, preco, duracao, horario]
     );
-    return rows[0]
+    return rows[0];
   }
+
+  async getTotalServicos() {
+    const { rows } = await db.query(`
+        SELECT COUNT(*) AS total from servicos
+      `);
+    return rows[0].total;
+  }
+
 }
 
-
-module.exports = new ServicosRepository()
+module.exports = new ServicosRepository();

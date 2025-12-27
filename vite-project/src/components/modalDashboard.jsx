@@ -1,5 +1,4 @@
 import Modal from "react-modal";
-import SelectComponent from "./selectComponent";
 import { useState } from "react";
 import axios from "axios";
 
