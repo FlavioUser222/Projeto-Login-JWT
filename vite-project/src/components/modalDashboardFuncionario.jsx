@@ -2,22 +2,24 @@ import Modal from "react-modal";
 import { useState } from "react";
 import axios from "axios";
 
-export default function ModalDashboard({ isOpen, onClose }) {
+export function ModalDashboardFuncionario({ isOpen, OnClose }) {
   const [nome, setNome] = useState("");
-  const [preco, setPreco] = useState(0);
-  const [duracao, setDuracao] = useState(0);
-  const [horario, setHorario] = useState();
+  const [facebook, setFacebook] = useState("");
+  const [instagram, setInstagram] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [admissao] = useState(new Date());
 
-  async function postServicos() {
+  async function postFuncionario() {
     try {
-      let res = await axios.post("http://localhost:3000/servico", {
+      let res = await axios.post("http://localhost:3000/funcionario", {
         nome,
-        preco,
-        duracao,
-        horario,
+        facebook,
+        instagram,
+        whatsapp,
+        admissao,
       });
 
-      alert("Servico Criado com sucesso", res);
+      alert("Funcionario Criado com sucesso", res);
     } catch (error) {
       console.error("erro ao criar ", error);
     }
@@ -26,7 +28,7 @@ export default function ModalDashboard({ isOpen, onClose }) {
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={onClose}
+      onRequestClose={OnClose}
       contentLabel="Modal"
       style={{
         overlay: {
@@ -51,43 +53,47 @@ export default function ModalDashboard({ isOpen, onClose }) {
       }}
     >
       <div className="modal-container">
-        <h2 style={{ color: "#fff" }}>Adicionar Servico</h2>
+        <h2 style={{ color: "#fff" }}>Adicionar Funcionario</h2>
 
         <input
           type="text"
           value={nome}
+          placeholder="Nome"
           onChange={(text) => {
             setNome(text.target.value);
           }}
         />
         <input
-          type="number"
-          value={preco}
+          type="text"
+          placeholder="Facebook"
+          value={facebook}
           onChange={(text) => {
-            setPreco(text.target.value);
+            setFacebook(text.target.value);
           }}
         />
         <input
-          type="time"
-          value={duracao}
+          type="text"
+          value={instagram}
+          placeholder="Instagram"
           onChange={(text) => {
-            setDuracao(text.target.value);
+            setInstagram(text.target.value);
           }}
         />
         <input
-          type="time"
-          value={horario}
+          type="text"
+          placeholder="Whatsapp"
+          value={whatsapp}
           onChange={(text) => {
-            setHorario(text.target.value);
+            setWhatsapp(text.target.value);
           }}
         />
 
         <button
           onClick={() => {
-            postServicos();
+            postFuncionario();
           }}
         >
-          Adicionar Servico
+          Adicionar Funcionario
         </button>
       </div>
     </Modal>

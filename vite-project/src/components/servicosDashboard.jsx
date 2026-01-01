@@ -26,7 +26,6 @@ export default function ServicosDashboard() {
           onClose={() => {
             setModalOpen(false);
           }}
-          value={servicos}
         ></ModalDashboard>
 
         <InfoTable>

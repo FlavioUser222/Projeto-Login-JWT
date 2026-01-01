@@ -6,7 +6,7 @@ const {
 
 async function funcionarioRoutes(app) {
   app.get("/funcionarios", getFuncionario);
-  app.post("/funcinario", postFuncionario);
+  app.post("/funcionario", postFuncionario);
   app.get("/totalfuncionarios", getTotalFuncionario);
 }
 
