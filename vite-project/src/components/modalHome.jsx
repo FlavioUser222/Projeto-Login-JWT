@@ -110,7 +110,7 @@ export default function ModalHome({
                     setSelectedHorario(servico.horario);
                   }}
                 />
-                {formatTime(servico.horario)}
+                {formatTime(servico.horario) + "h"}
               </label>
             </li>
           ))}

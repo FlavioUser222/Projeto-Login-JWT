@@ -165,6 +165,17 @@ header a {
   width: 100%;
 }
 
+.headerDashboard h1{
+  color: white;
+  font-weight: 700;
+}
+.tab-container hr{
+  width: 100%;
+  border: 1px solid grey;
+}
+
+
+
 .info-table th,
 .info-table td {
   text-align: center;
