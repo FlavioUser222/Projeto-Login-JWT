@@ -1,8 +1,11 @@
 const db = require("../services/conectionDB");
 
 class AgendamentosRepository {
-  async listarAgendamentos() {
-    const { rows } = await db.query("SELECT*FROM agendamentos");
+  async listarAgendamentos(limit = 20, offset = 0) {
+    const { rows } = await db.query(
+      "SELECT*FROM agendamentos ORDER BY id LIMIT $1 OFFSET $2",
+      [limit, offset]
+    );
     return rows;
   }
 

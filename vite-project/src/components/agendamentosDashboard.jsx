@@ -1,9 +1,13 @@
+import { useState } from "react";
 import useAgendamentos from "../hooks/useAgendamentos";
 import DashboardLayout from "./dashboardLayout";
 import InfoTable from "./infoTable";
 
 export default function AgendamentosDashboard() {
-  const agendamentos = useAgendamentos();
+  const [page, setPage] = useState(1);
+  const limit = 6;
+
+  const agendamentos = useAgendamentos(page,limit);
 
   return (
     <DashboardLayout>
@@ -37,6 +41,22 @@ export default function AgendamentosDashboard() {
             ))}
           </tbody>
         </InfoTable>
+
+        <button
+          onClick={() => {
+            setPage((p) => Math.max(1, p - 1));
+          }}
+          disabled={page === 1}
+        >
+          Anterior
+        </button>
+        <button
+          onClick={() => {
+            setPage((p) => Math.max(1, p + 1));
+          }}
+        >
+          Próximo {page}
+        </button>
       </div>
     </DashboardLayout>
   );
