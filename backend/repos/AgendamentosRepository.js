@@ -31,6 +31,25 @@ class AgendamentosRepository {
     console.debug(rows);
     return rows[0].total;
   }
+
+  async changeStatusAgendamentos(status, id) {
+    let { rows } = await db.query(
+      `UPDATE agendamentos 
+      SET status = $1 
+      WHERE id = $2 
+      RETURNING *`,
+      [status, id]
+    );
+    console.log(rows);
+    return rows[0];
+  }
+  async deleteAgendamento(id) {
+    let { rows } = await db.query(`DELETE FROM agendamentos WHERE id = $1`, [
+      id,
+    ]);
+
+    return rows[0];
+  }
 }
 
 module.exports = new AgendamentosRepository();

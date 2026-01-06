@@ -56,6 +56,7 @@ export default function ModalDashboard({ isOpen, onClose }) {
         <input
           type="text"
           value={nome}
+          placeholder="Nome"
           onChange={(text) => {
             setNome(text.target.value);
           }}
@@ -63,6 +64,7 @@ export default function ModalDashboard({ isOpen, onClose }) {
         <input
           type="number"
           value={preco}
+          placeholder="Preço"
           onChange={(text) => {
             setPreco(text.target.value);
           }}
@@ -70,12 +72,14 @@ export default function ModalDashboard({ isOpen, onClose }) {
         <input
           type="time"
           value={duracao}
+          placeholder="Duração"
           onChange={(text) => {
             setDuracao(text.target.value);
           }}
         />
         <input
           type="time"
+          placeholder="Horário"
           value={horario}
           onChange={(text) => {
             setHorario(text.target.value);

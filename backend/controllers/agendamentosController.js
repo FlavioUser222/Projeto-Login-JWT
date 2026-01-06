@@ -35,8 +35,29 @@ async function getTotalAgendamentos(req, res) {
   return res.json(agendamentosTotais);
 }
 
+async function changeStatusAgendamentos(req, res) {
+  const { status } = req.body;
+  const { id } = req.params;
+  console.log(id);
+
+  const newStatus = await AgendamentosRepository.changeStatusAgendamentos(
+    status,
+    id
+  );
+
+  res.json(newStatus);
+}
+
+async function deleteAgendamento(req, res) {
+  let { id } = req.params;
+  const deleteAgendamento = await AgendamentosRepository.deleteAgendamento(id);
+  res.json(deleteAgendamento);
+}
+
 module.exports = {
   postAgendamentoController,
   getAgendamento,
   getTotalAgendamentos,
+  changeStatusAgendamentos,
+  deleteAgendamento,
 };
