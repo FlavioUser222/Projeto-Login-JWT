@@ -8,6 +8,12 @@ class AgendamentosRepository {
     );
     return rows;
   }
+  async listarAgendamentosWP() {
+    const { rows } = await db.query(
+      "SELECT * FROM agendamentos"
+    );
+    return rows;
+  }
 
   async criarAgendamentos(
     cliente_id,

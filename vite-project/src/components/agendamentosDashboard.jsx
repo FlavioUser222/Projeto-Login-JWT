@@ -3,47 +3,62 @@ import useAgendamentos from "../hooks/useAgendamentos";
 import DashboardLayout from "./dashboardLayout";
 import InfoTable from "./infoTable";
 import axios from "axios";
-
-async function changeStatus(status, id) {
-  try {
-    let res = await axios.patch(
-      `http://localhost:3000/agendamento/status/${id}`,
-      {
-        status,
-      }
-    );
-    console.log(res);
-    alert("Status alterado com sucesso!");
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-async function deleteAgendamento(id) {
-  try {
-    let res = await axios.delete(`http://localhost:3000/agendamentos/${id}`);
-    console.log(res);
-    alert("Agendamento deletado com sucesso!");
-  } catch (error) {
-    console.log(error);
-  }
-}
+import { useQuery } from "@tanstack/react-query";
 
 export default function AgendamentosDashboard() {
   const [page, setPage] = useState(1);
-  const [hidden, setHidden] = useState(false);
-
-  const estilo = {
-    display: !hidden ? "none" : "flex",
-    flexDirection: "collumn",
-    position: "absolute",
-    top: "100%",
-    zIndex: "999",
-  };
-
+  const [hidden, setHidden] = useState(null);
   const limit = 6;
-
   const agendamentos = useAgendamentos(page, limit);
+
+  const { data } = useQuery({
+    queryKey: ["agendamentos", page],
+    queryFn: () => fetchAgendamentos(page),
+    refetchInterval:5000,
+  });
+
+  async function fetchAgendamentos(page) {
+    try {
+      let res = await axios.get(
+        `http://localhost:3000/agendamentos?limit=${limit}&offset=${
+          page - 1 * limit
+        }`
+      );
+
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function changeStatus(status, id) {
+    try {
+      let res = await axios.patch(
+        `http://localhost:3000/agendamento/status/${id}`,
+        {
+          status,
+        }
+      );
+      console.log(res);
+      alert("Status alterado com sucesso!");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async function deleteAgendamento(id) {
+    try {
+      let res = await axios.delete(`http://localhost:3000/agendamentos/${id}`);
+      console.log(res);
+      alert("Agendamento deletado com sucesso!");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function toggleMenu(id) {
+    setHidden(hidden === id ? null : id);
+  }
 
   return (
     <DashboardLayout>
@@ -61,12 +76,12 @@ export default function AgendamentosDashboard() {
               <th>Valor</th>
               <th>Status</th>
               <th>Horário</th>
-              <th>Confi..</th>
+              <th>Configuraçoess</th>
             </tr>
           </thead>
 
           <tbody>
-            {agendamentos.map((agendamento, index) => (
+            {data?.map((agendamento, index) => (
               <tr key={agendamento.id ?? index}>
                 <td>{agendamento.cliente_id}</td>
                 <td>{agendamento.barbeiro_id}</td>
@@ -77,12 +92,21 @@ export default function AgendamentosDashboard() {
                 <td style={{ position: "relative" }}>
                   <button
                     onClick={() => {
-                      setHidden(!hidden);
+                      toggleMenu(agendamento.id);
                     }}
                   >
                     :
                   </button>
-                  <div className="select-config" style={estilo}>
+                  <div
+                    className="select-config"
+                    style={{
+                      display: hidden === agendamento.id ? "flex" : "none",
+                      flexDirection: "column",
+                      position: "absolute",
+                      top: "100%",
+                      zIndex: 999,
+                    }}
+                  >
                     <button
                       onClick={() => {
                         changeStatus("Concluido", Number(agendamento.id));
@@ -90,7 +114,7 @@ export default function AgendamentosDashboard() {
                     >
                       Mudar Status
                     </button>
-                    
+
                     <button
                       onClick={() => {
                         deleteAgendamento(agendamento.id);

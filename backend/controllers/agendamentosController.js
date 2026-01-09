@@ -18,7 +18,7 @@ async function postAgendamentoController(req, res) {
 
 async function getAgendamento(req, res) {
   const page = req.query.page || 1;
-  const limit = req.query.limit || 20;
+  const limit = req.query.limit;
   const offset = (page - 1) * limit;
 
   const listaAgendamentos = await AgendamentosRepository.listarAgendamentos(
@@ -26,6 +26,11 @@ async function getAgendamento(req, res) {
     offset
   );
 
+  return res.json(listaAgendamentos);
+}
+
+async function getAgendamentosWP(req, res) {
+  const listaAgendamentos = await AgendamentosRepository.listarAgendamentosWP();
   return res.json(listaAgendamentos);
 }
 
@@ -60,4 +65,5 @@ module.exports = {
   getTotalAgendamentos,
   changeStatusAgendamentos,
   deleteAgendamento,
+  getAgendamentosWP,
 };
