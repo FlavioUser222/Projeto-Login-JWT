@@ -79,7 +79,7 @@ export default function AgendamentosDashboard() {
               <th>Valor</th>
               <th>Status</th>
               <th>Horário</th>
-              <th>Configuraçoess</th>
+              <th>Opções</th>
             </tr>
           </thead>
 
