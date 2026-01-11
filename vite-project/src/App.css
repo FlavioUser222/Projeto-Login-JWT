@@ -151,6 +151,12 @@ header {
   font-size: 30px;
 }
 
+.card-text{
+  flex-direction: column;
+  align-items: start;
+}
+
+
 
 
 
@@ -347,8 +353,9 @@ p {
 
 .card-text {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   width: 100%;
   padding: 0px 15px;
 }
@@ -477,6 +484,7 @@ button {
 .redes-card {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
 
 }
@@ -492,8 +500,17 @@ button {
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
   list-style: none;
 }
+
+.redes-ul li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .img-card {
   width: 100%;
