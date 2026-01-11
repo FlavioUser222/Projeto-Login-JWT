@@ -144,6 +144,7 @@ export default function AgendamentosDashboard() {
           onClick={() => {
             changeNextPage(page);
           }}
+          disabled={page < offset}
         >
         Próximo {page}
         </button>
