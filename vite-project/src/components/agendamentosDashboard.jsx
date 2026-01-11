@@ -1,5 +1,4 @@
 import { useState } from "react";
-import useAgendamentos from "../hooks/useAgendamentos";
 import DashboardLayout from "./dashboardLayout";
 import InfoTable from "./infoTable";
 import axios from "axios";
@@ -9,20 +8,18 @@ export default function AgendamentosDashboard() {
   const [page, setPage] = useState(1);
   const [hidden, setHidden] = useState(null);
   const limit = 6;
-  const agendamentos = useAgendamentos(page, limit);
+  const offset = (page - 1) * limit;
 
   const { data } = useQuery({
     queryKey: ["agendamentos", page],
-    queryFn: () => fetchAgendamentos(page),
-    refetchInterval:5000,
+    queryFn: () => fetchAgendamentos(limit, offset),
+    refetchInterval: 5000,
   });
 
-  async function fetchAgendamentos(page) {
+  async function fetchAgendamentos(limit, offset) {
     try {
       let res = await axios.get(
-        `http://localhost:3000/agendamentos?limit=${limit}&offset=${
-          page - 1 * limit
-        }`
+        `http://localhost:3000/agendamentos?limit=${limit}&offset=${offset}`
       );
 
       return res.data;
@@ -54,6 +51,12 @@ export default function AgendamentosDashboard() {
     } catch (error) {
       console.log(error);
     }
+  }
+  function changeNextPage(page) {
+    setPage(page + 1);
+  }
+  function changePreviousPage(page) {
+    setPage(page - 1);
   }
 
   function toggleMenu(id) {
@@ -131,7 +134,7 @@ export default function AgendamentosDashboard() {
 
         <button
           onClick={() => {
-            setPage((p) => Math.max(1, p - 1));
+            changePreviousPage(page);
           }}
           disabled={page === 1}
         >
@@ -139,10 +142,10 @@ export default function AgendamentosDashboard() {
         </button>
         <button
           onClick={() => {
-            setPage((p) => Math.max(1, p + 1));
+            changeNextPage(page);
           }}
         >
-          Próximo {page}
+        Próximo {page}
         </button>
       </div>
     </DashboardLayout>

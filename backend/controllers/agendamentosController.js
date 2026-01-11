@@ -19,7 +19,8 @@ async function postAgendamentoController(req, res) {
 async function getAgendamento(req, res) {
   const page = req.query.page || 1;
   const limit = req.query.limit;
-  const offset = (page - 1) * limit;
+  const offset = req.query.offset;
+  console.log(offset)
 
   const listaAgendamentos = await AgendamentosRepository.listarAgendamentos(
     limit,
