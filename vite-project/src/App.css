@@ -500,6 +500,14 @@ button {
 }
 
 
+@media (max-width:760px){
+  .mainContent{
+    min-height: 50vh;
+    margin-top: 40px;
+  }
+}
+
+
 
 
 .img-card {
