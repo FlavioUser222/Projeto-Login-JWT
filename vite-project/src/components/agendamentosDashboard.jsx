@@ -114,7 +114,9 @@ export default function AgendamentosDashboard() {
                       onClick={() => {
                         changeStatus("Concluido", Number(agendamento.id));
                       }}
+                      disabled={agendamento.status == "Concluido"}
                     >
+                      
                       Mudar Status
                     </button>
 
