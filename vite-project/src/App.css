@@ -140,6 +140,20 @@ header {
   padding: 10px;
 }
 
+.cardText h1 {
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+}
+.cardText span{
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+
+
+
 
 header a {
   text-decoration: none;
@@ -178,11 +192,12 @@ header a {
 
 
 
-.info-table th{
+.info-table th {
   text-align: center;
   border: 1px solid white;
   padding: 12px 10px;
 }
+
 .info-table td {
   padding: 6px 10px;
 }
