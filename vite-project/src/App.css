@@ -181,11 +181,10 @@ header a {
 .info-table th{
   text-align: center;
   border: 1px solid white;
-  padding: 20px;
+  padding: 12px 10px;
 }
 .info-table td {
   padding: 6px 10px;
-  border-bottom: 1px solid white;
 }
 
 .top-content h1 {
