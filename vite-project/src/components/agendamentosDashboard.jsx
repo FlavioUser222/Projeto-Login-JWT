@@ -13,13 +13,13 @@ export default function AgendamentosDashboard() {
   const { data } = useQuery({
     queryKey: ["agendamentos", page],
     queryFn: () => fetchAgendamentos(limit, offset),
-    refetchInterval: 5000,
+    refetchInterval: 3000,
   });
 
   async function fetchAgendamentos(limit, offset) {
     try {
       let res = await axios.get(
-        `http://localhost:3000/agendamentos?limit=${limit}&offset=${offset}`
+        `https://projeto-login-jwt.onrender.com/agendamentos?limit=${limit}&offset=${offset}`
       );
 
       return res.data;
@@ -31,7 +31,7 @@ export default function AgendamentosDashboard() {
   async function changeStatus(status, id) {
     try {
       let res = await axios.patch(
-        `http://localhost:3000/agendamento/status/${id}`,
+        `https://projeto-login-jwt.onrender.com/agendamento/status/${id}`,
         {
           status,
         }
@@ -45,7 +45,7 @@ export default function AgendamentosDashboard() {
 
   async function deleteAgendamento(id) {
     try {
-      let res = await axios.delete(`http://localhost:3000/agendamentos/${id}`);
+      let res = await axios.delete(`https://projeto-login-jwt.onrender.com/agendamentos/${id}`);
       console.log(res);
       alert("Agendamento deletado com sucesso!");
     } catch (error) {
@@ -55,6 +55,7 @@ export default function AgendamentosDashboard() {
   function changeNextPage(page) {
     setPage(page + 1);
   }
+
   function changePreviousPage(page) {
     setPage(page - 1);
   }

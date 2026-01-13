@@ -11,7 +11,7 @@ export function ModalDashboardFuncionario({ isOpen, OnClose }) {
 
   async function postFuncionario() {
     try {
-      let res = await axios.post("http://localhost:3000/funcionario", {
+      let res = await axios.post("https://projeto-login-jwt.onrender.com/funcionario", {
         nome,
         facebook,
         instagram,

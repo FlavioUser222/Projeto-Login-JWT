@@ -6,7 +6,7 @@ export default function useAgendamentos(page = 0, limit) {
 
   useEffect(() => {
     async function fetchServicos() {
-      let res = await axios("http://localhost:3000/agendamentos", {
+      let res = await axios("https://projeto-login-jwt.onrender.com/agendamentos", {
         params: {
           page: page,
           limit: limit,

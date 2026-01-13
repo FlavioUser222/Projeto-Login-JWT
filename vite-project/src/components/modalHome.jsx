@@ -24,7 +24,7 @@ export default function ModalHome({
 
   async function postAgendamento() {
     try {
-      let res = await axios.post("http://localhost:3000/agendamento", {
+      let res = await axios.post("https://projeto-login-jwt.onrender.com/agendamento", {
         cliente_id: nome,
         barbeiro_id: selectedIdProfissional,
         servico_id: selectedIdServico,
@@ -52,8 +52,9 @@ export default function ModalHome({
           backgroundColor: "rgba(0, 0, 0, 0.6)",
         },
         content: {
-          width: "620px",
-          height: "600px",
+          maxWidth: "620px",
+          maxHeight: "600px",
+          width:"100%",
           margin: "auto",
           padding: "20px",
           borderRadius: "12px",

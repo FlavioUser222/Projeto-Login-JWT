@@ -6,7 +6,7 @@ export default function useFuncionario() {
 
   useEffect(() => {
     async function fetchServicos() {
-      let res = await axios("http://localhost:3000/funcionarios");
+      let res = await axios("https://projeto-login-jwt.onrender.com/funcionarios");
       setFuncionario(res.data);
     }
     fetchServicos();

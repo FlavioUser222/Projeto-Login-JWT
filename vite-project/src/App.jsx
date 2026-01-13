@@ -11,9 +11,7 @@ import FuncionarioDashboard from "./components/funcionarioDashboard";
 
 function App() {
 
-
   return (
-  
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />

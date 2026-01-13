@@ -32,7 +32,7 @@ function Home() {
             <a href="#equipe">Nossa Equipe</a>
           </li>
           <li>
-            <a href="#contatos">Contatos</a>
+            <a href="#contatos">Unidades</a>
           </li>
         </ul>
 

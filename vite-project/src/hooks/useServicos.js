@@ -7,7 +7,7 @@ export default function useServicos() {
 
     useEffect(() => {
         async function fetchServicos() {
-            let res = await axios('http://localhost:3000/servicos')
+            let res = await axios('https://projeto-login-jwt.onrender.com/servicos')
             setServicos(res.data)
         }
         fetchServicos()

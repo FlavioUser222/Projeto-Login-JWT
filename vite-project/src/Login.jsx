@@ -10,23 +10,24 @@ function Login() {
 
     async function saveData() {
         try {
-            const res = await axios.post("http://localhost:3000/login", { email, senha })
+            const res = await axios.post("https://projeto-login-jwt.onrender.com/login", { email, senha })
             if (res.data.token) {
                 localStorage.setItem("token", res.data.token)
+
                 alert("Login realizado com sucesso!")
-                navigate('/home')
+                navigate('/dashboard')
             }
 
         } catch (error) {
-            alert("Erro ao realizar o login!",error)
+            alert("Erro ao realizar o login!", error)
         }
     }
 
     return (
         <>
-            <div>
+            <div className='wrapper-login-page'>
                 <h1>Login</h1>
-                <input type="email"  placeholder='Email'value={email} required onChange={e => { setEmail(e.target.value) }} />
+                <input type="email" placeholder='Email' value={email} required onChange={e => { setEmail(e.target.value) }} />
                 <input type="password" value={senha} placeholder='Senha' onChange={e => { setSenha(e.target.value) }} />
                 <button onClick={saveData}>Enviar</button>
             </div>

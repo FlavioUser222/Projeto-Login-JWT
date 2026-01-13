@@ -10,7 +10,7 @@ export default function ModalDashboard({ isOpen, onClose }) {
 
   async function postServicos() {
     try {
-      let res = await axios.post("http://localhost:3000/servico", {
+      let res = await axios.post("https://projeto-login-jwt.onrender.com/servico", {
         nome,
         preco,
         duracao,

@@ -9,7 +9,7 @@ function Cadastro() {
     const navigate = useNavigate()
 
     async function saveData() {
-        const res = await axios.post("http://localhost:3000/register", { email, senha })
+        const res = await axios.post("https://projeto-login-jwt.onrender.com/register", { email, senha })
         if (res.status === 200) {
             alert("Cadastro realizado com sucesso")
             
@@ -19,7 +19,7 @@ function Cadastro() {
     
     return (
         <>
-            <div className='Inputs-div'>
+            <div className='wrapper-login-page'>
                 <h1>Cadastrar-se</h1>
                 <input type="email" placeholder='Email' value={email} onChange={e => { setEmail(e.target.value) }} />
                 <input type="password" placeholder='Senha' value={senha} onChange={e => { setSenha(e.target.value) }} />
