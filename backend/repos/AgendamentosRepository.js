@@ -26,11 +26,11 @@ class AgendamentosRepository {
     hora_inicial,
     valor,
     status,
-    horaFinal
+    hora_final
   ) {
     const { rows } = await db.query(
-      `INSERT INTO agendamentos (cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status,horaFinal) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
-      [cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status, horaFinal]
+      `INSERT INTO agendamentos (cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status,hora_final) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
+      [cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status, hora_final]
     );
     return rows[0].id;
   }

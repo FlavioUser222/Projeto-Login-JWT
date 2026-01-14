@@ -2,7 +2,7 @@
 const AgendamentosRepository = require("../repos/AgendamentosRepository");
 
 async function postAgendamentoController(req, res) {
-  let { cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status,horaFinal } = req.body;
+  let { cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status,hora_final } = req.body;
 
 
 
@@ -13,7 +13,7 @@ async function postAgendamentoController(req, res) {
     hora_inicial,
     valor,
     status,
-    horaFinal
+    hora_final
   );
 
   

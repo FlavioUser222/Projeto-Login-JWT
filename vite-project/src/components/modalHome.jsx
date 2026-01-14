@@ -34,7 +34,7 @@ export default function ModalHome({
         hora_inicial: selectedHorario,
         valor: 30,
         status: "Em andamento",
-        horaFinal:"15:40:00",
+        hora_final:"15:40:00",
       });
 
       if (res.status == "201") {
