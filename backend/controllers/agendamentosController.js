@@ -2,13 +2,15 @@
 const AgendamentosRepository = require("../repos/AgendamentosRepository");
 
 async function postAgendamentoController(req, res) {
-  let { cliente_id, barbeiro_id, servico_id, horaInicial, valor, status,horaFinal } = req.body;
+  let { cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status,horaFinal } = req.body;
+
+
 
   const novoAgendamento = await AgendamentosRepository.criarAgendamentos(
     cliente_id,
     barbeiro_id,
     servico_id,
-    horaInicial,
+    hora_inicial,
     valor,
     status,
     horaFinal

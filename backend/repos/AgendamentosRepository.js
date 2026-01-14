@@ -1,6 +1,7 @@
 const db = require("../services/conectionDB");
 
 class AgendamentosRepository {
+
   async listarAgendamentos(limit = 20, offset = 0) {
     const { rows } = await db.query(
       "SELECT*FROM agendamentos ORDER BY id LIMIT $1 OFFSET $2",
@@ -22,14 +23,14 @@ class AgendamentosRepository {
     cliente_id,
     barbeiro_id,
     servico_id,
-    horaInicial,
+    hora_inicial,
     valor,
     status,
     horaFinal
   ) {
     const { rows } = await db.query(
-      `INSERT INTO agendamentos (cliente_id, barbeiro_id, servico_id, horaInicial, valor, status,horaFinal) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
-      [cliente_id, barbeiro_id, servico_id, horaInicial, valor, status, horaFinal]
+      `INSERT INTO agendamentos (cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status,horaFinal) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
+      [cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status, horaFinal]
     );
     return rows[0].id;
   }

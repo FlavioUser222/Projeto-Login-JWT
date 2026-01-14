@@ -31,7 +31,7 @@ export default function ModalHome({
         cliente_id: nome,
         barbeiro_id: selectedIdProfissional,
         servico_id: selectedIdServico,
-        horaInicial: selectedHorario,
+        hora_inicial: selectedHorario,
         valor: 30,
         status: "Em andamento",
         horaFinal:"15:40:00",
