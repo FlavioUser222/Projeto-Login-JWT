@@ -8,27 +8,28 @@ class AgendamentosRepository {
     );
     return rows;
   }
-  
+
   async listarAgendamentosWP() {
     const { rows } = await db.query(
       "SELECT * FROM agendamentos"
     );
     return rows;
   }
-  /*Adicionar no banco horario de inicio e horario de fim */
+  /* Adicionar no banco horario de inicio e horario de fim  */
 
 
   async criarAgendamentos(
     cliente_id,
     barbeiro_id,
     servico_id,
-    hora,
+    horaInicial,
     valor,
-    status
+    status,
+    horaFinal
   ) {
     const { rows } = await db.query(
-      `INSERT INTO agendamentos (cliente_id, barbeiro_id, servico_id, hora, valor, status) VALUES ($1,$2,$3,$4,$5,$6) RETURNING *`,
-      [cliente_id, barbeiro_id, servico_id, hora, valor, status]
+      `INSERT INTO agendamentos (cliente_id, barbeiro_id, servico_id, horaInicial, valor, status,horaFinal) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`,
+      [cliente_id, barbeiro_id, servico_id, horaInicial, valor, status, horaFinal]
     );
     return rows[0].id;
   }

@@ -15,20 +15,24 @@ export default function ModalHome({
   let [selectedHorario, setSelectedHorario] = useState("");
   let [selectedIdServico, setSelectedIdServico] = useState("");
 
+
   const handleChangeProfissional = (ev) => {
     setSelectedIdProfissional(ev.target.value);
   };
+
   const handleChangeServico = (ev) => {
     setSelectedIdServico(ev.target.value);
   };
 
+  
   async function postAgendamento() {
     try {
       let res = await axios.post("https://projeto-login-jwt.onrender.com/agendamento", {
         cliente_id: nome,
         barbeiro_id: selectedIdProfissional,
         servico_id: selectedIdServico,
-        hora: selectedHorario,
+        horaInicial: selectedHorario,
+        horaFinal:"15:38:00",
         valor: 30,
         status: "Em andamento",
       });
@@ -40,6 +44,7 @@ export default function ModalHome({
     } catch (error) {
       console.log(error);
     }
+
   }
 
   return (
@@ -54,7 +59,7 @@ export default function ModalHome({
         content: {
           maxWidth: "620px",
           maxHeight: "600px",
-          width:"100%",
+          width: "100%",
           margin: "auto",
           padding: "20px",
           borderRadius: "12px",
