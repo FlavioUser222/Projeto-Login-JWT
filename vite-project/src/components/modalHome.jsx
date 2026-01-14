@@ -24,7 +24,7 @@ export default function ModalHome({
     setSelectedIdServico(ev.target.value);
   };
 
-  
+
   async function postAgendamento() {
     try {
       let res = await axios.post("https://projeto-login-jwt.onrender.com/agendamento", {
@@ -34,7 +34,7 @@ export default function ModalHome({
         hora_inicial: selectedHorario,
         valor: 30,
         status: "Em andamento",
-        hora_final:"15:40:00",
+        hora_final: "15:40:00",
       });
 
       if (res.status == "201") {
@@ -44,8 +44,14 @@ export default function ModalHome({
     } catch (error) {
       console.log(error);
     }
-
   }
+
+
+
+
+
+
+
 
   return (
     <Modal

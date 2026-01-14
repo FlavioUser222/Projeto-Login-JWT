@@ -92,7 +92,7 @@ export default function AgendamentosDashboard() {
                 <td>{agendamento.servico_id}</td>
                 <td>{agendamento.valor}</td>
                 <td>{agendamento.status}</td>
-                <td>{agendamento.hora}</td>
+                <td>{agendamento.hora_inicial}</td>
                 <td style={{ position: "relative" }}>
                   <button
                     onClick={() => {

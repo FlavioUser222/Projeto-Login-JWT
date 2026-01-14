@@ -18,7 +18,6 @@ class AgendamentosRepository {
   }
   /* Adicionar no banco horario de inicio e horario de fim  */
 
-
   async criarAgendamentos(
     cliente_id,
     barbeiro_id,
@@ -61,6 +60,19 @@ class AgendamentosRepository {
 
     return rows[0];
   }
+
+  async calcularHoraFinal(id) {
+    let { rows } = await db.query(`SELECT * FROM servicos WHERE id`, [id])
+
+    console.log(rows)
+
+    return rows[0]
+  }
+
+
+
+
+
 }
 
 module.exports = new AgendamentosRepository();
