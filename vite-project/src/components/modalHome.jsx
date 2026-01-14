@@ -32,9 +32,9 @@ export default function ModalHome({
         barbeiro_id: selectedIdProfissional,
         servico_id: selectedIdServico,
         horaInicial: selectedHorario,
-        horaFinal:"15:38:00",
         valor: 30,
         status: "Em andamento",
+        horaFinal:"15:40:00",
       });
 
       if (res.status == "201") {
