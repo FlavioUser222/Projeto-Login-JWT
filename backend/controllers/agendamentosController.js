@@ -13,6 +13,8 @@ async function postAgendamentoController(req, res) {
     status
   );
 
+  
+
   res.status(201).json(novoAgendamento);
 }
 

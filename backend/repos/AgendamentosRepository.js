@@ -8,12 +8,15 @@ class AgendamentosRepository {
     );
     return rows;
   }
+  
   async listarAgendamentosWP() {
     const { rows } = await db.query(
       "SELECT * FROM agendamentos"
     );
     return rows;
   }
+  /*Adicionar no banco horario de inicio e horario de fim */
+
 
   async criarAgendamentos(
     cliente_id,
