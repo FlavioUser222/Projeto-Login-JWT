@@ -15,6 +15,14 @@ thead {
   width: 100%;
 }
 
+.wrapper-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+
 
 .divServicos {
   display: flex;
@@ -130,7 +138,6 @@ p {
 }
 
 
-
 header {
   display: flex;
   justify-content: space-between;
@@ -145,15 +152,17 @@ header {
   font-size: 22px;
   font-weight: 500;
 }
-.cardText span{
+
+.cardText span {
   color: white;
   font-weight: 700;
   font-size: 30px;
 }
 
-.card-text{
+.card-text {
   flex-direction: column;
   align-items: start;
+  flex-wrap: wrap;
 }
 
 
@@ -488,11 +497,13 @@ button {
   width: 100%;
 
 }
-.card-text h1{
+
+.card-text h1 {
   margin-bottom: 10px;
   font-weight: 500;
   text-transform: capitalize;
 }
+
 .wrapper-values p {
   color: white;
   text-shadow: none;
@@ -500,8 +511,8 @@ button {
 }
 
 
-@media (max-width:760px){
-  .mainContent{
+@media (max-width:760px) {
+  .mainContent {
     min-height: 50vh;
     margin-top: 40px;
   }
@@ -525,7 +536,7 @@ button {
   list-style: none;
 }
 
-.redes-ul li{
+.redes-ul li {
   display: flex;
   align-items: center;
   justify-content: center;

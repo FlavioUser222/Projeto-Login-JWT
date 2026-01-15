@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import axios from "axios";
 import SelectComponent from "./selectComponent";
 import { formatTime } from "./formatTime";
+import { QueryClient, useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 export default function ModalHome({
   isOpen,
@@ -15,6 +16,8 @@ export default function ModalHome({
   let [selectedHorario, setSelectedHorario] = useState("");
   let [selectedIdServico, setSelectedIdServico] = useState("");
 
+  const queryClient = useQueryClient()
+
 
   const handleChangeProfissional = (ev) => {
     setSelectedIdProfissional(ev.target.value);
@@ -25,32 +28,16 @@ export default function ModalHome({
   };
 
 
-  async function postAgendamento() {
-    try {
-      let res = await axios.post("https://projeto-login-jwt.onrender.com/agendamento", {
-        cliente_id: nome,
-        barbeiro_id: selectedIdProfissional,
-        servico_id: selectedIdServico,
-        hora_inicial: selectedHorario,
-        valor: 30,
-        status: "Em andamento",
-        hora_final: "15:40:00",
-      });
 
-      if (res.status == "201") {
-        alert("Agendamento criado com sucesso");
-        onClose()
-      }
-    } catch (error) {
-      console.log(error);
+  const mutation = useMutation({
+    mutationFn: (newAgendamento) => {
+      return axios.post('https://projeto-login-jwt.onrender.com/agendamento', newAgendamento)
+    },
+
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['agendamentos'] })
     }
-  }
-
-
-
-
-
-
+  })
 
 
   return (
@@ -130,12 +117,20 @@ export default function ModalHome({
 
         <button
           onClick={() => {
-            postAgendamento();
+            mutation.mutate({
+              cliente_id: nome,
+              barbeiro_id: selectedIdProfissional,
+              servico_id: selectedIdServico,
+              hora_inicial: selectedHorario,
+              valor: 30,
+              status: "Em andamento",
+              hora_final: "15:40:00",
+            })
           }}
         >
           Agendar Horário
         </button>
       </div>
-    </Modal>
+    </Modal >
   );
 }
