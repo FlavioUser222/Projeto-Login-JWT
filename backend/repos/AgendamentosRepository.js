@@ -64,14 +64,10 @@ class AgendamentosRepository {
   async calcularHoraFinal(id) {
     let { rows } = await db.query(`SELECT * FROM servicos WHERE id`, [id])
 
-    console.log(rows)
+    rows[0].horario
 
     return rows[0]
   }
-
-
-
-
 
 }
 
