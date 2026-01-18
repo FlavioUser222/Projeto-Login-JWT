@@ -2,11 +2,17 @@
 const AgendamentosRepository = require("../repos/AgendamentosRepository");
 
 async function postAgendamentoController(req, res) {
-  let { cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status, hora_final } = req.body;
+  let { cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status} = req.body;
 
-  // const calcularHoraFinal = await AgendamentosRepository.calcularHoraFinal(servico_id)
+  const  horaServico = await AgendamentosRepository.pegarHoraServico(servico_id)
 
-  // console.log(calcularHoraFinal)
+  if(hora_inicial > horaServico ){
+    console.log("Erro ao realizar agendamento")
+    return
+  }
+
+  let hora_final = hora_inicial + horaServico
+  console.log(hora_final)
 
   const novoAgendamento = await AgendamentosRepository.criarAgendamentos(
     cliente_id,
