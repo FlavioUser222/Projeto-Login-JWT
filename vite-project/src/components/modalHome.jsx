@@ -36,6 +36,8 @@ export default function ModalHome({
 
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['agendamentos'] })
+      alert("Agendamento criado com sucesso")
+      onClose()
     }
   })
 
