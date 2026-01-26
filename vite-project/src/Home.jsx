@@ -26,6 +26,10 @@ function Home() {
         <img src="../public/assets/778 branco.png" alt="" />
         <ul className="headerUl">
           <li>
+            <a href="#contatos">Meus agendamentos</a>
+          </li>
+          
+          <li>
             <a href="#servicos">Serviços</a>
           </li>
           <li>
