@@ -1,5 +1,7 @@
 // const { agendamento } = require("../models/database")
 const AgendamentosRepository = require("../repos/AgendamentosRepository");
+const formatTime = require('../services/formatTime')
+
 
 async function postAgendamentoController(req, res) {
   let { cliente_id, barbeiro_id, servico_id, hora_inicial, valor, status } = req.body;
@@ -11,9 +13,8 @@ async function postAgendamentoController(req, res) {
     return
   }
 
-  let hora_final = Number(hora_inicial) + Number(horaServico)
 
-
+  let hora_final = formatTime(hora_inicial, horaServico)
 
 
   const novoAgendamento = await AgendamentosRepository.criarAgendamentos(
