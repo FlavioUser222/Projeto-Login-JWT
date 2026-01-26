@@ -7,7 +7,7 @@ async function useMeusAgendamentos() {
     
     useEffect(() => {
         async function fetchAgendamentos() {
-            let res = await axios('https://projeto-login-jwt.onrender.com/servicos')
+            let res = await axios('https://projeto-login-jwt.onrender.com/userAgendamentos')
             setMeusAgendamentos(res.data)
         }
         
