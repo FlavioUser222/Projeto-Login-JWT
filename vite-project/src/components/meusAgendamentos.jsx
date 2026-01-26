@@ -1,3 +1,5 @@
+import useMeusAgendamentos from "../hooks/useMeusAgendamentos"
+
 export default function MeusAgendamentos() {
     let meusAgendamentos = useMeusAgendamentos()
     return (
