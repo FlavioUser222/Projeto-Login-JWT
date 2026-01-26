@@ -1,4 +1,4 @@
-export default function formatTime(time1, time2) {
+export function formatTime(time1, time2) {
     let splitTime1 = time1.split(':')
     let splitTime2 = time2.split(':')
 

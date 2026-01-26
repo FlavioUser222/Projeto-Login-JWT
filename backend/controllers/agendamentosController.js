@@ -1,6 +1,7 @@
 // const { agendamento } = require("../models/database")
 const AgendamentosRepository = require("../repos/AgendamentosRepository");
-const formatTime = require('../services/formatTime')
+const { formatTime } = require("../services/formatTime");
+
 
 
 async function postAgendamentoController(req, res) {
