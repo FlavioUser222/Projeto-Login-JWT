@@ -2,8 +2,8 @@ export default function formatTime(time1, time2) {
     let splitTime1 = time1.split(':')
     let splitTime2 = time2.split(':')
 
-    let [min1, hora1] = time1
-    let [min2, hora2] = time2
+    let [min1, hora1] = splitTime1
+    let [min2, hora2] = splitTime2
 
     if (min1 > 60 || min2 > 60) {
         hora1++
