@@ -16,7 +16,7 @@ class AgendamentosRepository {
     );
     return rows;
   }
- 
+
 
   async criarAgendamentos(
     cliente_id,
@@ -66,6 +66,13 @@ class AgendamentosRepository {
 
     return rows[0].duracao
   }
+
+  async listarAgendamentosByUser(id) {
+    let { rows } = await db.query(`SELECT * FROM agendamentos WHERE cliente_id = $1`, [id])
+
+    return rows[0]
+  }
+
 
 }
 

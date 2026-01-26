@@ -78,6 +78,20 @@ async function deleteAgendamento(req, res) {
   res.json(deleteAgendamento);
 }
 
+async function meusAgendametos(req,res){
+  let { cliente_id } = req.body
+  const showMyAgendamentos = await AgendamentosRepository.listarAgendamentosByUser(cliente_id)
+
+  res.status(200).json()
+}
+
+
+
+
+
+
+
+
 module.exports = {
   postAgendamentoController,
   getAgendamento,
@@ -85,4 +99,5 @@ module.exports = {
   changeStatusAgendamentos,
   deleteAgendamento,
   getAgendamentosWP,
+  meusAgendametos
 };

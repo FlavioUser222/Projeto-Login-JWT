@@ -3,13 +3,14 @@ import CardServicos from "./components/cardServicos";
 import CardFuncionarios from "./components/cardFuncionarios";
 import useServicos from "./hooks/useServicos";
 import ModalHome from "./components/modalHome";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useFuncionario from "./hooks/useFuncionario";
 
 function Home() {
   const servicos = useServicos();
   const funcionario = useFuncionario();
   const [modal, setModal] = useState(false);
+
 
   return (
     <>
@@ -26,9 +27,9 @@ function Home() {
         <img src="../public/assets/778 branco.png" alt="" />
         <ul className="headerUl">
           <li>
-            <a href="#contatos">Meus agendamentos</a>
+            <Link to={'/meusAgendamentos'}>Meus agendamentos</Link>
           </li>
-          
+
           <li>
             <a href="#servicos">Serviços</a>
           </li>
