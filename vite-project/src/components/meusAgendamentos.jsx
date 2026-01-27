@@ -9,9 +9,9 @@ export default function MeusAgendamentos() {
                 meusAgendamentos.map(agendamento => {
                     return (
                         <div>
-                            <h1>agendamento.valor</h1>
-                            <h1>agendamento.status</h1>
-
+                            <h1>{agendamento.valor}</h1>
+                            <p>{agendamento.servico_id}</p>
+                            <p>{agendamento.status}</p>
                         </div>
 
                     )
