@@ -79,7 +79,7 @@ async function deleteAgendamento(req, res) {
 }
 
 async function meusAgendametos(req, res) {
-  let { cliente_id } = req.params.cliente_id
+  let { cliente_id } = req.params
   const showMyAgendamentos = await AgendamentosRepository.listarAgendamentosByUser(cliente_id)
 
   res.json(showMyAgendamentos)
