@@ -10,6 +10,7 @@ export default function useMeusAgendamentos() {
     useEffect(() => {
         async function fetchAgendamentos() {
             let res = await axios('https://projeto-login-jwt.onrender.com/userAgendamento')
+            console.log(res.data)
             setMeusAgendamentos(res.data)
         }
         

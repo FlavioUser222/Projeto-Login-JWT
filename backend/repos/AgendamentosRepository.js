@@ -70,8 +70,9 @@ class AgendamentosRepository {
 
   async listarAgendamentosByUser(id) {
     let { rows } = await db.query(`SELECT * FROM agendamentos WHERE cliente_id = $1`, [id])
+
+    console.log(rows[0])
     
-    console.log(rows)
     return rows[0]
   }
 
