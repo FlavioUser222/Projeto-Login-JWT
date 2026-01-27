@@ -73,7 +73,7 @@ class AgendamentosRepository {
 
     console.log(rows[0])
     
-    return rows[0]
+    return rows
   }
 
 
