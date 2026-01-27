@@ -78,11 +78,11 @@ async function deleteAgendamento(req, res) {
   res.json(deleteAgendamento);
 }
 
-async function meusAgendametos(req,res){
+async function meusAgendametos(req, res) {
   let { cliente_id } = req.body
   const showMyAgendamentos = await AgendamentosRepository.listarAgendamentosByUser(cliente_id)
 
-  res.status(200).json()
+  res.json(showMyAgendamentos)
 }
 
 
